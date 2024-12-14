@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Application Form</title>
+        <style>
+           
+            form{background-color: #20b2aa; color: white; padding: 10px;}
+            input{margin-left: 15px;}
+            td{width: 50%; height: 50px;}
+           .main_div{display: flex; width: 100%; height: 50px;;}
+           .inner_div{width: 50%;}
+           
+        </style>
+    </head>
+    <body>
+       <form action="#" method="post">
+            <h1 style="text-align: center;">Application Form</h1>         
+            <div class="main_div">
+                <div class="inner_div">
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fname" placeholder="Enter First Name" required pattern="[A-Z][a-z]{10}">
+                </div>
+                <div class="inner_div">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname" placeholder="Enter Last Name" required pattern="[A-Z][a-z]{10}">
+                </div>
+            </div>
+
+            <div class="main_div">
+                <div class="inner_div">
+                    <label for="dob">Date of birth:</label>
+                    <input type="date" name="dob" required >
+                </div>
+                <div class="inner_div">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" min="12" max="80" required >
+                </div>
+            </div>
+
+            <div class="main_div">
+                <div class="inner_div">
+                    <label for="gender">Gender:</label>
+                    <select name="gender" style="margin-left: 15px;" required>
+                        <option value="#">Select an Option</option>
+                        <option value="Male" >Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="inner_div">
+                    <label for="email">Email Addres:</label>
+                    <input type="email" name="email" placeholder="Enter Email Address" required>
+                </div>
+            </div>
+
+            <div class="main_div">
+               <div>
+                    <label for="position">Positions Available:</label>
+                    <input type="radio" name="position" value="junior developer" required>Junior Developer
+                    <input type="radio" name="position" value="mid-level developer" required>Mid-level Developer
+                    <input type="radio" name="position"  value="senior developer" required>Senior Developer
+               </div>
+            </div>
+
+            <div class="main_div">
+                <div>
+                    <label for="lang">Programming Languages:</label>
+                    <input type="checkbox" name="lang[]" value="java" required>Java
+                    <input type="checkbox" name="lang[]" value="javascript" required>JavaScript
+                    <input type="checkbox" name="lang[]" value="python" required>Pyhton
+                </div>
+            </div>
+
+            <div class="main_div">
+                <div class="inner_div">
+                    <label for="pass">Password:</label>
+                    <input type="password" name="pass" required minlength="8" title="minimum length for a password is 8 characters.">
+                </div>
+                <div class="inner_div">
+                    <label for="confirm">Confirm Password:</label>
+                    <input type="password" name="confirm" required minlength="8" title="minimum length for a password is 8 characters.">
+                </div>
+            </div>
+            <center>
+                <input type="submit" value="Submit" style="padding-right: 15px; padding-left: 15px;  background-color: rgb(237, 106, 13); color: white;" >
+
+                <input type="reset" value="Reset" style="padding-right: 15px; padding-left: 15px; background-color: rgb(237, 106, 13); color:white" >
+            </center>
+       
+       </form>
+    </body>
+</html>

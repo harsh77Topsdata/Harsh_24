@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <title>BootStrap Layout</title>
+
+        <style>
+            .main_section{height: 500px;}
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row overflow-hidden">
+                <!--Header Section-->
+                <div class="col-md-12 col-sm-12 bg-primary p-5">
+                    <h1>Header Section</h1>
+                </div>
+                <!--Navigation Bar-->
+                <div class="col-md-12 bg-secondary mt-3 p-3">
+                    <button type="button" class="btn btn-outline-info">Home</button>
+                </div>
+                <!--Content Section-->
+                
+                    <!--Slidebar-->
+                    <div class="col-md-3 col-sm-4 bg-info text-dark main_section mt-3" style="font-weight: bold;">
+                        <ul type="none" class="">
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Contact us</li>
+                        </ul>
+                    </div>
+                    <!--MainContent-->
+                    <div class="row col-md-9 bg-primary mt-3  ">
+                        <h1>Image Gallery</h1>
+                        <div class="col-md-3  ">
+                            <div class="card" style="width:100%">
+                              <img class="card-img-top" src="https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image">
+                              <div class="card-body">
+                                <h4 class="card-title">Brown Squirrel</h4>
+                                <p class="card-text">Brown Squirrel choti, phurtiili aur bahut shaitaan hoti hai!</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card" style="width:100%">
+                              <img class="card-img-top" src="https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image">
+                              <div class="card-body">
+                                <h4 class="card-title">Macro Photography of Dragonfly on Plant</h4>
+                                <p class="card-text">"Macro photography: Dragonfly ke wings ki sundar tasveer!"</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card" style="width:100%">
+                              <img class="card-img-top" src="https://images.pexels.com/photos/399973/pexels-photo-399973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image">
+                              <div class="card-body">
+                                <h4 class="card-title">Photograph of Moon
+                                </h4>
+                                <p class="card-text">Chand ki shanti bhari roshni ka ek khubsurat snapshot!</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!--Footer Section-->
+                <div class="col-md-12 bg-dark mt-3 p-5 text-white">
+                    <h1>Footer Section</h1>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
