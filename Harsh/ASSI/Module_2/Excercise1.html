@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Exercise 1: Try To Create User Details Form.</title>
+        <style>
+             .form-center {display:flex;justify-content: center;}
+            form{width: 40%;background-color:#80ef80; padding: 10px;}
+            fieldset{border: 0px;}
+            .main_div{display:flex; width: 95%; border: 3px solid white; border-radius: 5px;  padding: 5px;
+            align-items: center; margin-top: 5px;}
+            
+            h5{background-color: aqua;}
+            .label_div{width: 30%;}
+            .input_div{width: 60%;}
+            span{font-weight: bold;}
+            .btn{padding: 10px; letter-spacing: 3px; color:white;background-color: black; border-radius: 15px;}
+            input{border-color: white;border-radius: 5px; color:black }
+        </style>
+    </head>
+    <body>
+       <div class="form-center">
+            <form action="#" method="post">
+                <fieldset>
+                    <legend><span class="title">Step 1: Your details</span></legend>
+                    <div class="main_div">
+                       <div class="label_div"><label for="name"><span>Name</span></label></div>
+                       <div class="input_div"><input type="text" name="name" size="30" required placeholder="Enter Name" title="Please Enter Name" autofocus pattern="[A-Z][a-z]]{20}">
+                        
+                        </div>
+                    </div>
+
+                    <div class="main_div">
+                        <div class="label_div">
+                            <label for="email"><span>Email</span></label>
+                        </div>
+                        <div class="input_div">
+                            <input type="email" name="email" required placeholder="example@domain.com" size="30" title="Please Enter Email" >
+                        </div>
+                    </div>
+
+                    <div class="main_div">
+                        <div class="label_div"><span>Phone</span></div>
+                        <div class="input_tag">
+                            <input type="text" name="phone" placeholder="Eg. +447500000000" pattern="[0-9]{10}" size="30" title="Please Enter Phone Number">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><span class="title">Step 2: Delivery address</span></legend>
+                    <div class="main_div">
+                        <div class="label_div"><span>Address</span></div>
+                        <div class="input_tag">
+                            <textarea name="address" cols="20" rows="5"required title="Please Enter Address"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="main_div">
+                        <div class="label_div"><span>Post code</span></div>
+                        <div class="input_tag">
+                            <input type="text" name="code" required size="30" title="Please Enter Postcode" pattern="[0-9]{6}">
+                        </div>
+                    </div>
+
+                    <div class="main_div">
+                        <div class="label_div"><span>Country</span></div>
+                        <div class="input_tag">
+                            <input type="text" name="country" required size="30" title="Please Enter Country">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><span class="title">Step 3: Card details</span></legend>
+                    <div class="main_div">
+                      <div class="label_div"> <span>Card details</span></div>
+                       <div class="input_tag">
+                            <input type="radio" name="card" required value="visa" title="Please select One Option">Visa
+                            <input type="radio" name="card" required value="AmEx" title="Please select One Option">AmEx
+                            <input type="radio" name="card" required value="mastercard" title="Please select One Option">Mastercard
+                       </div>
+                    </div>
+
+                    <div class="main_div">
+                        <div class="label_div"><span>Card Number</span></div>
+                        <div class="input_tag">
+                            <input type="text" name="c_number" required pattern="[0-9]{10}" size="30" title="Please Enter Card Number">
+                        </div>
+                    </div>
+                    <div class="main_div">
+                        <div class="label_div"><span>Security code</span></div>
+                        <div class="input_tag">
+                            <input type="text" name="s_code" required pattern="[0-9]{3}" size="30" title="Please Security Code">
+                        </div>
+                    </div>
+                    <div class="main_div">
+                        <div class="label_div"><span>Name on card</span></div>
+                        <div class="input_tag">
+                            <input type="text" name="cardholder" placeholder="Exact name as on the card" size="30" title="Please Enter Name on Card">
+                        </div>
+                    </div>
+                </fieldset>
+               <center><input type="submit" value="BUY IT!" name="submit" class="btn"></center>
+            </form>
+       </div>
+    </body>
+</html>
