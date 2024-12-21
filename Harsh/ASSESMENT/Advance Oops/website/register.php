@@ -1,3 +1,13 @@
+<?php
+
+if(isset($_SESSION['userid']))
+{
+	echo "<script>
+	     window.location='index';
+		</script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +34,7 @@
     
         <div class="container mt-5">
             <h1 class="text-center border-bottom mb-3">Register</h1>
-            <form action="">
+            <form action="" method="post">
                 <div class="form-group mt-2">
                     <label for="name">Name</label>
                     <input type="name" name="name" id="" placeholder="Enter Your name" class="form-control" required>

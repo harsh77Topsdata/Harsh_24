@@ -19,7 +19,7 @@
 <body>
 	<div class="container mt-5">
             <h1 class="text-center border-bottom mb-3">Register</h1>
-            <form action="">
+            <form action="" method="post">
                 <div class="form-group mt-2">
                     <label for="name">Name</label>
                     <input type="name" name="name" id="" placeholder="Enter Your name" class="form-control" required>
@@ -46,7 +46,7 @@
                 <div class="form-group mt-2">
                     <input type="submit" value="signup" name="signup" class="btn btn-info btn-lg">
                     <br>
-                    <a href="login" class="float-right "><h4>If you have already an* account</h4></a>
+                    <a href="login" class="float-right "><h4>If you have already an account</h4></a>
                 </div>
             </form>
         </div>

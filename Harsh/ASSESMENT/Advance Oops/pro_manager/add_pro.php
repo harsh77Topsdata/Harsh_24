@@ -21,24 +21,28 @@ include_once('header.php');
                            ADD PRODUCT
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="" method="post" enctype="multipart/form-data">
+                            <form action="" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Enter product Name</label>
-                                            <input class="form-control" type="text" required>
+                                            <input class="form-control" name="Name"type="text" required>
                                         </div>
                                  <div class="form-group">
                                             <label>Enter product type</label>
-                                            <input class="form-control" type="text"	required>
+                                            <input class="form-control" name="Types"type="text"	required>
                                  </div>
 						<div class="form-group">
                             <label>Enter product Price</label>
-                            <input class="form-control" type="text" required>
+                            <input class="form-control" type="text" name="Price" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter product Qty</label>
+                            <input class="form-control" type="number" name="qty" required>
                         </div>
 						<div class="form-group">
                             <label>Enter Product Image</label>
-                            <input class="form-control" type="file" required>
+                            <input class="form-control" type="file" name="image" required>
                         </div>
-						<button type="submit" class="btn btn-info">SUBMIT</button>
+						<button type="submit" name="submit" class="btn btn-info">SUBMIT</button>
 						</form>
                             </div>
                         </div>

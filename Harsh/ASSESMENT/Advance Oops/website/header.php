@@ -1,3 +1,8 @@
+<?php
+
+	
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -55,7 +60,11 @@
                               <ul class="menu-area-main">
                                  <li> <a href="index">Home</a></li>
                                  <li><a href="order">Your Orders</a></li>
-								 <li><a href="login">login</a></li>
+								 <?php if(isset($_SESSION['email'])) { ?>
+								  <li><a href="userlogout"><?php echo $_SESSION['email'];?></li>
+								  <?php  } else { ?>
+								  <li><a href="login">Login</a></li>
+								  <?php } ?>
                               </ul>
                            </nav>
                         </div>

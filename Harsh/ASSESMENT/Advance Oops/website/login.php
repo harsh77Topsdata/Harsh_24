@@ -24,7 +24,7 @@
     
         <div class="container mt-5">
             <h1 class="text-center border-bottom mb-3">User Login</h1>
-            <form action="">
+            <form action="" method="post">
                 <div class="form-group mt-2">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="" placeholder="Enter Your Emails" class="form-control">

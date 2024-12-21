@@ -41,20 +41,8 @@ include_once('header.php');
                                 Female : <input name="gender" type="radio" value="Female" />
                             </div>
                         </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                Language :
-                                Hindi : <input name="lag[]" type="checkbox" value="Hindi" />
-                                English : <input name="lag[]" type="checkbox" value="English" />
-                                Gujarati : <input name="lag[]" type="checkbox" value="Gujarati" />
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <input class="form-control valid" name="file" type="file"
-                                    placeholder="Upload your Profile Iamge">
-                            </div>
-                        </div>
+                       
+                        
                         <button type="submit" class="btn btn-info">SUBMIT</button>
 						</form>
                             </div>

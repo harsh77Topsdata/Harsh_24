@@ -58,13 +58,11 @@
                     </li>
 					
 					<li>
-                        <a href="form"><i class="fa fa-desktop "></i>pro_manager</a>
-                    </li>
-					<li>
                         <a  href="view_stock"><i class="fa fa-square-o "></i>view_stock</a>
                     </li>
 					<li>
-                        <a  href="manage_pro"><i class="fa fa-square-o "></i>manage_product</a>
+					<li>
+                        <a  href="Manage_order"><i class="fa fa-square-o "></i>Manage Order</a>
                     </li>
 					<li>
                         <a  href="add_pro"><i class="fa fa-square-o "></i>Add product</a>
