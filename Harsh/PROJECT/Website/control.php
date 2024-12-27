@@ -112,9 +112,9 @@ class control extends model
 					//$photo=$_REQUEST['file']['name'];
 					$gender = $_REQUEST['gender'];
 
-					$file = $_FILES['file']['name'];
+					 $file = $_FILES['photo']['name'];
 					$path = "img/" . $file;
-					$tmp_img = $_FILES['file']['tmp_name'];
+					$tmp_img = $_FILES['photo']['tmp_name'];
 					move_uploaded_file($tmp_img, $path);
 
 					$data = array(
@@ -131,6 +131,7 @@ class control extends model
 					if ($res) {
 						echo "<script>
 							alert('Signup successful !');
+							window.location('login');
 						</script>";
 					} else {
 						echo "signup not sucessfully";
@@ -156,7 +157,7 @@ class control extends model
 					$res=$this->select_where('customer',$where);
 					$fetch=$res->fetch_object();
 					
-					$old_img=$fetch->file;
+					$old_img=$fetch->photo;
 					
 					if(isset($_REQUEST['save']))
 					{

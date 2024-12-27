@@ -59,7 +59,7 @@ if(isset($_SESSION['userid']))
               <br>
               <br>
 			
-			<form method="post" class="" onsubmit="return reg_form(this)">
+			<form method="post" class="" onsubmit="return reg_form(this)" enctype="multipart/form-data">
 
 			<div class="form-group ">
                <label class="control-label col-sm-2"><b>Enter your name</b><span style="color:red"></span></label>
@@ -108,13 +108,19 @@ if(isset($_SESSION['userid']))
           <div class="form-group">
             <label class="control-label col-sm-2"><b>upload profile</b><span style="color:red"></span></label>
             <div class="col-sm-10">
-            <input type="file" class="form-control" name="file" id="photo" onChange="return check(this)">
+            <input type="file" class="form-control" name="photo" id="photo" onChange="return check(this)">
           </div>
           </div>
 		  
 		  <div class="form-group">
 				<div class="col-sm-8 col-sm-offset-2">
                <input href="index" type="submit" name="signup" class="btn btn-dark btn-lg" value="signup" id="submit">
+				</div>
+			</div>
+			  <div class="form-group">
+				<div class="col-sm-8 col-sm-offset-2">
+				<p class="text-white border-top">If you have Already a account then login</p>
+              <a href="login" class=" btn btn-primary btn-lg">Login</a>
 				</div>
 			</div>
 

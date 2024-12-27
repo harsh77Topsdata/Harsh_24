@@ -1,7 +1,13 @@
 <?php
 
 include_once('header.php');
-
+if(!isset($_SESSION['username']))
+{
+	echo "<script>
+	alert('Login first');
+	window.location='login';
+	</script>";
+}
 ?>
 
 <html>
