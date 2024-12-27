@@ -436,17 +436,17 @@ include_once('header.php');
                         <form>
                             <div class="form-row">
                                 <div class="col form-group">
-                                    <input type="text" class="form-control form-control-lg bg-dark text-white"
+                                    <input type="text" name="Weight" class="form-control form-control-lg bg-dark text-white"
                                         placeholder="Weight (KG)">
                                 </div>
                                 <div class="col form-group">
-                                    <input type="text" class="form-control form-control-lg bg-dark text-white"
+                                    <input type="text" name="Height"class="form-control form-control-lg bg-dark text-white"
                                         placeholder="Height (CM)">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col form-group">
-                                    <input type="text" class="form-control form-control-lg bg-dark text-white"
+                                    <input type="text" name="Age" class="form-control form-control-lg bg-dark text-white"
                                         placeholder="Age">
                                 </div>
                                 <div class="col form-group">
@@ -463,7 +463,7 @@ include_once('header.php');
                                         value="Calculate Now">
                                 </div>
                             </div>
-                        </form>
+					</form>
                     </div>
                 </div>
             </div>

@@ -9,11 +9,11 @@ include_once("header.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Manage Dietplan</h1>
+                        <h1 class="page-head-line" align="center">Manage Dietplan</h1>
                     </div>
                 </div>
                  <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="panel panel-default">
 
                         <div class="panel-body">
@@ -25,15 +25,21 @@ include_once("header.php");
 								    <td>name</td>
 									<td>preworkout</td>
 									<td>postworkout</td>
-										</tr>
+									<td>Action</td>
+								</tr>
 								</tbody>
                                     <tbody>
                                         <?php foreach($diet_arr as $md){?>
 										<tr>
-											<td><?php echo $md->id?></td>
+											<td><?php echo $md->d_id?></td>
 											<td><?php echo $md->name?></td>
 											<td><?php echo $md->preworkout?></td>
 											<td><?php echo $md->postworkout?></td>
+											<td>
+											<a href="" class="btn btn-primary">Edit</a>
+											<a href="delete?Manage_dietplan=<?php echo $md->d_id ?>"
+                                                class="btn btn-danger">Delete</a>
+											</td>
 										</tr>
 										<?php }?>
                                        

@@ -1,79 +1,65 @@
 <?php
 
-include_once('header.php');
+if(isset($_SESSION['userid']))
+{
+	echo "<script>
+		windoe.location='index'
+		 </sccript>";
+}
 
 ?>
-
-<!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+	<link href="css/font.css" rel="stylesheet">
+	
+</head>
 
 <body>
     <main>
-        <!--? Hero Start -->
-        <div class="slider-area2 section-bg2 hero-overly" data-background="assets/img/hero/hero2.png">
-            <div class="slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap hero-cap2">
-                                <h1>Login</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Hero End -->
-        <!--?  Contact Area start  -->
+        
         <section class="contact-section">
-            <div class="container">
+            <div class="col-md-6">
 
-                <div class="row">
-
-                    <div class="col-lg-8">
-                        <form enctype="multipart/form-data" class="form-contact contact_form" action="" method="post">
-                            <div class="row">
-
-
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email"
-                                            placeholder="Email">
-                                    </div>
-                                </div>
-                                <br>
-
-
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="password" id="password" type="text"
-                                            placeholder="Enter your password">
-                                    </div>
-                                </div>
-                                <br>
-
-
-                            </div>
-                            <div class="form-group mt-3">
-                                <button type="submit" name="submit"
-                                    class="button button-contactForm boxed-btn">Login</button>
-                                <br>
-
-                                <a href="signup" class="ms-5 text-primary">If you not Regisrtered then signup
-                                    Here</a>
-                            </div>
-                        </form>
-                    </div>
-
+		<div class="container mt-5">
+		   
+            <h1 class="text-center border-bottom mb-3">Login</h1>
+            <form action="" method="post" >
+                <div class="form-group mt-2">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="" placeholder="Enter Your Emails" class="form-control">
                 </div>
+                <div class="form-group mt-2">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Your Password"class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <input type="submit" value="Submit" name="submit" class="btn btn-danger btn-lg">
+                    <br>
+                    <a href="signup" class="float-right "><h4>Create An Account</h4></a>
+                </div>
+            </form>
+        </div>
             </div>
         </section>
         <!-- Contact Area End -->
-        <?php
-
-
-        include_once('footer.php');
-        ?>
+   
     </main>
 </body>
 

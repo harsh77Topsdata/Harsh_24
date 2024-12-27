@@ -7,7 +7,7 @@ include_once("header.php");
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Manage Contactus</h1>
+                <h1 class="page-head-line" align="center">Manage Contactus</h1>
 
             </div>
         </div>
@@ -25,6 +25,7 @@ include_once("header.php");
                                         <td>name</td>
                                         <td>email</td>
                                         <td>comment</td>
+										<td>Action</td>
 
                                     </tr>
                                 </tbody>

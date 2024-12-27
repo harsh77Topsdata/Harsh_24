@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+if(isset($_SESSION['userid']))
+{
+	echo "<script>
+		window.loction='index'
+		</script>";
+}
+
+
+?>
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -31,17 +43,21 @@
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
 
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" action="" method="post">
                         <hr />
-                        <h5>Enter Details to Login</h5>
+                        <h3><b>Trainer Login</b></h3>
                         <br />
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                            <input type="text" class="form-control" placeholder="Your Username " />
+                            <input type="email" class="form-control" placeholder="Your Email " name="email" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input type="password" class="form-control" placeholder="Your Password" />
+                            <input type="password" class="form-control" placeholder="Your Password" name="password" />
+                        </div>
+						 <div class="form-group input-group">
+                           
+                            <input type="submit" class="form-control" name="submit" value="Login"/>
                         </div>
                         <div class="form-group">
                             <label class="checkbox-inline">
@@ -49,12 +65,13 @@
                             </label>
                             <span class="pull-right">
                                 <a href="index.php">Forget password ? </a>
-                            </span>
-                        </div>
 
-                        <a href="index.php" class="btn btn-primary ">Login Now</a>
-                        <hr />
-                        Not register ? <a href="index.php">click here </a> or go to <a href="index.php">Home</a>
+                            </span>
+							 <a href="register" class="float-right "><h4>No any *account go register</h4></a>
+                        </div>
+						 
+
+                        
                     </form>
                 </div>
 

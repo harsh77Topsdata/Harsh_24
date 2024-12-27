@@ -22,7 +22,7 @@ include_once('header.php');
                 <div class="carousel-item">
                     <img class="w-100" src="img/carousel-2.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <h3 class="text-primary text-capitalize m-0">Gym & Fitness Center</h3>
+                        <h3 class="text-primary text-capitalize m-0 play">Gym & Fitness Center</h3>
                         <h2 class="display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Get Body In
                             Shape</h2>
                         <a href="" class="btn btn-lg btn-outline-light mt-3 mt-md-5 py-md-3 px-md-5">Join Us Now</a>

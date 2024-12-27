@@ -5,7 +5,7 @@ include_once('header.php');
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Trainer Forms</h1>
+                <h1 class="page-head-line" align="center">Trainer Forms</h1>
 
 
             </div>
@@ -18,18 +18,18 @@ include_once('header.php');
                     Add Trainer Form
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" action="" method="post" enctype='multipart/form-data'>
                         <div class="form-group">
                             <label>Enter Name</label>
-                            <input class="form-control" type="text" required>
+                            <input class="form-control" name="name" type="text" required>
                         </div>
                         <div class="form-group">
                             <label>Enter Email</label>
-                            <input class="form-control" type="text" required>
+                            <input class="form-control" type="text" name="email" required>
                         </div>
                         <div class="form-group">
                             <label>Enter Password</label>
-                            <input class="form-control" type="text" required>
+                            <input class="form-control" type="text" name="password" required>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
@@ -55,7 +55,7 @@ include_once('header.php');
 
 
 
-                        <button type="submit" class="btn btn-info">Sumit </button>
+                        <button type="submit" name="submit" class="btn btn-info">submit</button>
 
                     </form>
                 </div>
@@ -66,9 +66,7 @@ include_once('header.php');
 
 </div>
 
-</div>
 
-</div>
 
 <?php
 

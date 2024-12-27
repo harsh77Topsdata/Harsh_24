@@ -7,7 +7,7 @@ class control extends model
 
 	function __construct()
 	{
-		//session_start();
+		session_start();
 		model::__construct();
 
 		$path = $_SERVER['PATH_INFO'];
@@ -27,7 +27,29 @@ class control extends model
 				break;
 
 			case '/contact':
-
+				if(isset($_REQUEST['submit']))
+				{
+					$name=$_REQUEST['Name'];
+					$email=$_REQUEST['Email'];
+					$comment=$_REQUEST['Comment'];
+					
+					$data= array("Name"=>$name,"Email"=>$email,"Comment"=>$comment);
+					
+					$res=$this->insert('contactus',$data);
+					if($res)
+					{
+						echo "<script>
+							alert('contact successful !');
+							</script>";
+					}
+					else
+					{
+						echo "<script>
+							alert('contact not successful !');
+							</script>";
+					}
+					
+				}
 				include_once('contact.php');
 				break;
 
@@ -50,14 +72,21 @@ class control extends model
 
 						$fetch = $res->fetch_object();
 						$status = $fetch->Status;
-						$userid = $fetch->Cust_id;
+						//$userid = $fetch->Cust_id;
 						if ($status == "unblock") {
-							/*$_SESSION['Email']=$email;
-												 $_SESSION['Userid']=$userid;*/
+							$_SESSION['username']=$fetch->Name;
+							$_SESSION['userid']=$fetch->Cust_id;
+							if(isset($_SESSION['username'])&&isset($_SESSION['userid']))
+							{
 							echo "<script>
 							alert('Login successful !');
 							window.location='index'
 							</script>";
+							}
+							else
+							{
+								echo error_reporting();
+							}
 						} else {
 							echo "<script>
 							alert('Login Failed due to Blocked Account !');
@@ -92,7 +121,7 @@ class control extends model
 						"Name" => $name,
 						"Email" => $email,
 						"Password" => $password,
-						"Mobile_No" => $Mobile_No,
+						"mobile_No" => $Mobile_No,
 						"Photo" => $file,
 						"Address" => $address,
 						"Gender" => $gender
@@ -110,7 +139,80 @@ class control extends model
 				}
 				include_once('signup.php');
 				break;
-
+			
+			case '/userprofile' :
+				$where=array("Cust_id"=>$_SESSION['userid']);
+				$res=$this->select_where('customer',$where);
+				$fetch=$res->fetch_object();
+				include_once('userprofile.php');
+				break;
+				
+				
+			case '/editprofile' :
+				if(isset($_REQUEST['user_edit']))
+				{
+					$Cust_id=$_REQUEST['user_edit'];
+					$where=array("Cust_id"=>$Cust_id);
+					$res=$this->select_where('customer',$where);
+					$fetch=$res->fetch_object();
+					
+					$old_img=$fetch->file;
+					
+					if(isset($_REQUEST['save']))
+					{
+						$name=$_REQUEST['name'];
+						$email=$_REQUEST['email'];
+						
+						$Cust_id=$_REQUEST['Cust_id'];
+						
+						if($_FILES['file']['size']>0)
+						{
+						
+							$file=$_FILES['Photo']['name'];
+							$path="assets/img/".$file;
+							$tmp_img=$_FILES['Photo']['tmp_name'];
+							move_uploaded_file($tmp_img,$path);
+						
+							$arr=array("name"=>$name,"email"=>$email,"Cust_id"=>$Cust_id,"file"=>$file);
+							
+							$res=$this->update_where('customer',$arr,$where);
+							if($res)
+							{
+								$_SESSION['username']=$name;
+								unlink("website/img/".$old_img);
+								echo "<script>
+									alert('Update successful !');
+									window.location='userprofile'
+								  </script>";
+							}
+						}
+						else
+						{
+							$arr=array("name"=>$name,"email"=>$email,"Cust_id"=>$Cust_id);
+							$res=$this->update_where('customer',$arr,$where);
+							if($res)
+							{
+								$_SESSION['username']=$name;
+								echo "<script>
+									alert('Update successful !');
+									window.location='userprofile'
+								  </script>";
+							}
+						}
+					}
+				}
+				include_once('editprofile.php');
+				break;
+				
+			case '/userlogout' :
+				unset($_SESSION['username']);
+				unset($_SESSION['userid']);
+				echo "<script>
+									alert('Logout successful !');
+									window.location='login'
+								  </script>";
+				break;
+				
 			default:
 				echo "<h1>404 page not found</h1>";
 				break;

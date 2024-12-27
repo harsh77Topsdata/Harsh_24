@@ -1,0 +1,6 @@
+@font-face
+{
+	font-family:play;
+	src:url(fonts/Play_Pretend.otf);
+}
+.play{font-family:play;};

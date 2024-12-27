@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+         $("#test").hide(5000);
+        });
+  
+        $("#show").click(function(){
+             $("#test").show();
+        });
+    
+        $("#toggle").click(function(){
+            $("p").toggle();
+        });	
+  
+        });
+    </script>
+</head>
+
+<body>
+<p id="test">Acknowladge trible chif</p>
+<button id="hide">hide</button>
+<button id="show">show</button>
+<button id="toggle">toggle bettween hide and show</button>
+
+
+</body>
+
+</html>
+    

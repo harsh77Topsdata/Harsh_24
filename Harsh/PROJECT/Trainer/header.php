@@ -1,3 +1,12 @@
+<?php
+	if(!isset($_SESSION['trainer_email']))
+	{
+		echo "<script>alert('Login required');
+		window.location='login';</script>";
+	}
+	
+				
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -28,17 +37,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">COMPANY NAME</a>
+                <a class="navbar-brand" href="index.php">Fitness Fuel</a>
             </div>
 
             <div class="header-right">
+			
+				
+				<?php if(isset($_SESSION['trainer_email'])) { ?>
+								  <li><a href="userlogout"><?php echo $_SESSION['trainer_email'];?></li>
+								  <?php  } 
+								  else { ?>
+								  <li><a href="login">Login</a></li>
+								  <?php } ?>
 
-                <a href="message-task.php" class="btn btn-info" title="New Message"><b>30 </b><i
-                        class="fa fa-envelope-o fa-2x"></i></a>
-                <a href="message-task.php" class="btn btn-primary" title="New Task"><b>40 </b><i
-                        class="fa fa-bars fa-2x"></i></a>
-                <a href="login.php" class="btn btn-danger" title="Logout"><i
-                        class="fa fa-exclamation-circle fa-2x"></i></a>
+                
+                
 
 
             </div>
@@ -52,9 +65,9 @@
                             <img src="assets/img/user.png" class="img-thumbnail" />
 
                             <div class="inner-text">
-                                Jhon Deo Alex
+                                <?php echo $_SESSION['trainer_email'];?>
                                 <br />
-                                <small>Last Login : 2 Weeks Ago </small>
+                              
                             </div>
                         </div>
 
@@ -62,13 +75,11 @@
 
 
                     <li>
-                        <a href="index.php"><i class="fa fa-dashboard "></i>Dashboard</a>
+                        <a href="dashboard"><i class="fa fa-dashboard "></i>Dashboard</a>
                     </li>
                     <li>
 
-                    <li>
-                        <a href="index"><i class="fa fa-toggle-on"></i>index</a>
-                    </li>
+                 
                     <li>
                         <a href="Manage_contact"><i class="fa fa-bell "></i>Manage contact</a>
                     </li>
@@ -81,10 +92,6 @@
                     <li>
                         <a href="View_feedback"><i class="fa fa-edit "></i>View feedback</a>
                     </li>
-                    </li>
-
-                    <li>
-                        <a href="login"><i class="fa fa-sign-in "></i>Login Page</a>
                     </li>
                 </ul>
             </div>
