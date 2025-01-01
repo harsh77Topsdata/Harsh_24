@@ -68,7 +68,7 @@ class control extends model
 						$lag=implode(",",$lag_arr); 
 					
 					$file = $_FILES['file']['name'];
-					echo $path = "assets/img/" . $file;
+					$path = "assets/img/" . $file;
 					$tmp_img = $_FILES['file']['tmp_name'];
 					move_uploaded_file($tmp_img, $path);
 					

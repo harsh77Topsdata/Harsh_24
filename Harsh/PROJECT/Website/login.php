@@ -3,8 +3,10 @@
 if(isset($_SESSION['userid']))
 {
 	echo "<script>
-		windoe.location='index'
-		 </sccript>";
+	alert('login first');
+		window.location='index';
+		
+		 </script>";
 }
 
 ?>

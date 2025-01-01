@@ -18,7 +18,7 @@ include_once('header.php');
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-3">
-                <img class="img-fluid mb-4 mb-lg-3" src="img/profile.jpg" alt="Image">
+                <img class="img-fluid mb-4 mb-lg-3" src="img/<?php echo $fetch->Photo;?>" alt="Image">
             </div>
             <form enctype="multipart/form-data" class="form-contact contact_form" action="" method="post" >
             <div class="row">
@@ -34,8 +34,8 @@ include_once('header.php');
 				</div>
 				<div class="col-sm-12">
 					<div class="form-group">
-					<input class="form-control valid" name="file" id="email" type="file" placeholder="uplode your profile image">
-					<img src="website/img/profile.jpg<?php echo $fetch->Photo;?>" width="100px"/></input>
+					<input class="form-control valid" name="file" id="" type="file" placeholder="uplode your profile image">
+					
 					</div>
 				</div>
 				 <div class="form-group mt-3">

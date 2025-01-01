@@ -17,7 +17,7 @@ if(!isset($_SESSION['username']))
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-3">
-                <img class="img-fluid mb-4 mb-lg-0" src="img/profile.jpg" alt="Image">
+                <img class="img-fluid mb-4 mb-lg-0" src="img/<?php echo $fetch->Photo;?>" alt="Image">
             </div>
             <div class="col-lg-9">
                 <h5><a href="#">Welcome :<?php echo $fetch->Name?></a></h5>

@@ -67,8 +67,42 @@ class model
 		return $run;
 	}
 
-
-
+	function update_where($tbl,$arr,$where)
+	{
+		// update cust set name='raj',email='raj@gmail.com' where id=11
+		$column_arr=array_keys($arr);
+		$values_arr=array_values($arr);
+		
+		$upd="update $tbl set ";  // 1=1 means query contnue
+		$j=0;
+		$count=count($arr);
+		foreach($arr as $w)
+		{
+			if($count==$j+1)
+			{
+				$upd.=" $column_arr[$j]='$values_arr[$j]'";
+			}
+			else
+			{
+				$upd.=" $column_arr[$j]='$values_arr[$j]',";
+				$j++;
+			}
+		}
+		$wcolumn_arr=array_keys($where);
+		$wvalues_arr=array_values($where);
+		
+		$upd.=" where 1=1";  // 1=1 means query contnue
+		$i=0;
+		foreach($where as $w)
+		{
+			echo $upd.=" and $wcolumn_arr[$i]='$wvalues_arr[$i]'";
+			$i++;
+		}
+		$run=$this->conn->query($upd);  // query run on db
+		return $run;
+		
+	}
+	
 
 
 }

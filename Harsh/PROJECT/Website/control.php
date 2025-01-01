@@ -76,17 +76,13 @@ class control extends model
 						if ($status == "unblock") {
 							$_SESSION['username']=$fetch->Name;
 							$_SESSION['userid']=$fetch->Cust_id;
-							if(isset($_SESSION['username'])&&isset($_SESSION['userid']))
-							{
+						
 							echo "<script>
 							alert('Login successful !');
-							window.location='index'
+							window.location='index';
 							</script>";
-							}
-							else
-							{
-								echo error_reporting();
-							}
+							
+							
 						} else {
 							echo "<script>
 							alert('Login Failed due to Blocked Account !');
@@ -153,29 +149,31 @@ class control extends model
 				if(isset($_REQUEST['user_edit']))
 				{
 					$Cust_id=$_REQUEST['user_edit'];
+					
 					$where=array("Cust_id"=>$Cust_id);
+					//print_r($where);
 					$res=$this->select_where('customer',$where);
 					$fetch=$res->fetch_object();
 					
-					$old_img=$fetch->photo;
+					$old_img=$fetch->Photo;
 					
 					if(isset($_REQUEST['save']))
 					{
 						$name=$_REQUEST['name'];
 						$email=$_REQUEST['email'];
 						
-						$Cust_id=$_REQUEST['Cust_id'];
+						//$Cust_id=$_REQUEST['Cust_id'];
 						
 						if($_FILES['file']['size']>0)
 						{
 						
-							$file=$_FILES['Photo']['name'];
-							$path="assets/img/".$file;
-							$tmp_img=$_FILES['Photo']['tmp_name'];
+							$file=$_FILES['file']['name'];
+							$path="img/".$file;
+							$tmp_img=$_FILES['file']['tmp_name'];
 							move_uploaded_file($tmp_img,$path);
 						
-							$arr=array("name"=>$name,"email"=>$email,"Cust_id"=>$Cust_id,"file"=>$file);
-							
+							$arr=array("Name"=>$name,"Email"=>$email,"Photo"=>$file);
+							//	print_r($arr);
 							$res=$this->update_where('customer',$arr,$where);
 							if($res)
 							{
@@ -189,7 +187,7 @@ class control extends model
 						}
 						else
 						{
-							$arr=array("name"=>$name,"email"=>$email,"Cust_id"=>$Cust_id);
+							$arr=array("Name"=>$name,"Email"=>$email);
 							$res=$this->update_where('customer',$arr,$where);
 							if($res)
 							{
