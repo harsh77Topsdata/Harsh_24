@@ -60,7 +60,7 @@ if(isset($_SESSION['userid']))
         </div>
             </div>
         </section>
-        <!-- Contact Area End -->
+       
    
     </main>
 </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2024 at 06:50 AM
+-- Generation Time: Jan 02, 2025 at 07:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -86,9 +86,14 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`Cust_id`, `Name`, `Email`, `Password`, `Mobile_No`, `Photo`, `Address`, `Status`, `Gender`) VALUES
-(1, 'Harsh kiri', 'kiriharsh5@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 960111222, 'OTC .jpg', 'Gujarat', 'unblock', 'Male'),
+(1, 'Harsh kiri', 'kiriharsh5@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 960111222, 'pexels-anush-1229356.jpg', 'Gujarat', 'unblock', 'Male'),
 (2, 'Roman', 'roman@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 960111222, 'ORIGnal trible chief.jpg', 'Australia', 'unblock', 'Male'),
-(7, 'Jey', 'jey@gmail.com', '41525af98cffe913d396c83bdd493181', 0, '', 'india', 'unblock', 'm');
+(7, 'Jey', 'jey@gmail.com', '41525af98cffe913d396c83bdd493181', 0, '', 'india', 'unblock', 'Male '),
+(14, 'Jey', 'jey123@gmail.com', '25f9e794323b453885f5181f1b624d0b', 9784121365, '', 'India', 'unblock', 'Male '),
+(17, 'Jey', 'jey78@gmail.com', '41971986261ece86fcba35a07206fc25', 9784121365, '', 'India', 'unblock', 'male'),
+(18, 'Raja', 'raj@gmail.com', '25d55ad283aa400af464c76d713c07ad', 1234567890, '', 'Lambha ', 'unblock', 'Male'),
+(22, 'Prakash', 'prakash@gmail.com', '25d55ad283aa400af464c76d713c07ad', 1234567890, '', 'lambha', 'unblock', 'Male'),
+(26, 'Akash', 'akash@gmail.com', '25d55ad283aa400af464c76d713c07ad', 1234567890, 'pexels-victorfreitas-791763.jpg', 'Narol', 'unblock', 'Male');
 
 -- --------------------------------------------------------
 
@@ -109,7 +114,8 @@ CREATE TABLE `diet` (
 --
 
 INSERT INTO `diet` (`d_id`, `name`, `preworkout`, `postworkout`, `Gender`) VALUES
-(1, 'Harsh', 'Banana', 'Meal', 'Male');
+(1, 'Harsh', 'Banana', 'Meal', 'Male'),
+(5, 'Mahesh ', 'Apple ', 'Protin shake ', 'Male');
 
 -- --------------------------------------------------------
 
@@ -120,6 +126,7 @@ INSERT INTO `diet` (`d_id`, `name`, `preworkout`, `postworkout`, `Gender`) VALUE
 CREATE TABLE `feedback` (
   `v_id` int(11) NOT NULL,
   `cust_id` int(100) NOT NULL,
+  `name` varchar(250) NOT NULL,
   `coment` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -127,8 +134,8 @@ CREATE TABLE `feedback` (
 -- Dumping data for table `feedback`
 --
 
-INSERT INTO `feedback` (`v_id`, `cust_id`, `coment`) VALUES
-(2, 1, 'nice trainer ');
+INSERT INTO `feedback` (`v_id`, `cust_id`, `name`, `coment`) VALUES
+(17, 1, 'Harsh kiri', 'coment');
 
 -- --------------------------------------------------------
 
@@ -175,7 +182,8 @@ INSERT INTO `trainer` (`t_id`, `name`, `email`, `password`, `gender`, `language`
 (2, 'Rajnikant', 'ra@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Male', 'English', ''),
 (6, 'Roman', 'ram@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Male', 'English', 'team-2.jpg'),
 (7, 'Roman', 'ram12@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Male', 'English', 'team-3.jpg'),
-(8, 'Roman', 'r123@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Male', 'Hindi,English,Gujarati', 'team-1.jpg');
+(8, 'Roman', 'r123@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Male', 'Hindi,English,Gujarati', 'team-1.jpg'),
+(9, 'Jonny', 'jo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Male', 'English', 'team-1.jpg');
 
 --
 -- Indexes for dumped tables
@@ -248,19 +256,19 @@ ALTER TABLE `contactus`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `diet`
 --
 ALTER TABLE `diet`
-  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `v_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `v_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `schedule`
@@ -272,7 +280,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `trainer`
 --
 ALTER TABLE `trainer`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

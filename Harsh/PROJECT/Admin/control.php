@@ -115,7 +115,8 @@ class control extends model
 					$id = $_REQUEST['Manage_contacts'];
 					$where = array("c_id" => $id);
 					$res = $this->delete_where('contactus', $where);
-					if ($res) {
+					if($res) 
+					{
 						echo "<script>
 							alert('Contact Deleted successful !');
 							window.location='Manage_contact';
@@ -124,6 +125,24 @@ class control extends model
 						echo "<script>
 							alert('Contact not Deleted !');
 							window.location='Manage_contact';
+						</script>";
+					}
+				}
+				if(isset($_REQUEST['View_feedback']))
+				{
+					$v_id=$_REQUEST['View_feedback'];
+					$where=array("v_id"=>$v_id);
+					$res=$this->delete_where('feedback',$where);
+					if($res) 
+					{
+						echo "<script>
+							alert('feedback Deleted successful !');
+							window.location='View_feedback';
+						</script>";
+					} else {
+						echo "<script>
+							alert('feedback not Deleted !');
+							window.location='View_feedback';
 						</script>";
 					}
 				}

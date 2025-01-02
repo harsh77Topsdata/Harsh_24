@@ -26,6 +26,7 @@ include_once('header.php');
                                     <tr>
                                         <td>V_id</td>
 										<td>Cust_id</td>
+										<td>Name</td>
                                         <td>Coment</td>
 										<td>Action</td>
 									</tr>
@@ -36,6 +37,7 @@ include_once('header.php');
                                     <tr>
                                         <td><?php echo $fa->v_id ?></td>
 										 <td><?php echo $fa->cust_id ?></td>
+										 <td><?php echo $fa->name; ?></td>
                                         <td><?php echo $fa->coment; ?></td>
 										<td>
 											<a href="delete?View_feedback=<?php echo $fa->v_id ?>"

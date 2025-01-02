@@ -26,7 +26,11 @@ if(!isset($_SESSION['username']))
 									<p>Upload photo : <?php echo $fetch->Photo;?></p>
 									<p>Status : <?php echo $fetch->Gender;?></p>
 									
-									<a href="editprofile?user_edit=<?php echo $fetch->Cust_id;?>" class="btn btn-warning">Edit Profile</a>
+									<a href="editprofile?user_edit=<?php echo $fetch->Cust_id;?>" class="btn btn-danger">Edit Profile</a>
+									<br>
+									<br>
+									<a href="feedback?feedback=<?php echo $fetch->Cust_id;?>" class="btn btn-danger">Feedback</a>
+									
             </div>
         </div>
     </div>

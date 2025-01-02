@@ -212,6 +212,37 @@ class control extends model
 								  </script>";
 				break;
 				
+			case '/feedback' :
+			   if(isset($_REQUEST['submit']))
+			   {
+				   
+				   $where=array("Cust_id"=>$_SESSION['userid']);
+				   $sel=$this->select_where('customer',$where);
+				   $fetch=$sel->fetch_object();
+				   
+				    $name=$fetch->Name;
+					$coment=$_REQUEST['coment'];
+					$data=array("Cust_id"=>$_SESSION['userid'],'name'=>$name,'coment'=>'coment');
+				   
+					$res=$this->insert('feedback',$data);
+					if($res)
+					{
+						echo "<script>
+						alert('feddback add sucessfully');
+						window.location='userprofile';
+						</script>";
+					}
+					else
+					{
+						echo "<script>
+						alert('feddback not added');
+						</script>";
+					}
+					
+			   }
+			   include_once('feedback.php');
+			   break;
+				
 			default:
 				echo "<h1>404 page not found</h1>";
 				break;
