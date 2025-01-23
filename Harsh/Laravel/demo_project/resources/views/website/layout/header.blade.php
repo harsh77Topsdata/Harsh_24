@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">	
  
      <!-- Site Metas -->
-    <title>Green Special - Restaurant Responsive HTML5 OnePage Template</title>  
+    <title>First Class Cocktails</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
