@@ -41,30 +41,36 @@ function active($currect_page)
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     <!-- Topbar Start -->
     <div class="container-fluid bg-primary py-3 d-none d-md-block">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="col-md-4 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
                         <a class="text-white pr-3" href="">FAQs</a>
                         <span class="text-white">|</span>
                         <a class="text-white px-3" href="">Help</a>
                         <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="">Support</a>
-                        <div class="pl-3">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Member
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button  class="dropdown-item"  href="signup" type="button">Signup</button>
-                            <button class="dropdown-item" href="login"   type="button">Login</button>
-                        </div>
-                    </div>
+                        @if(session()->has('uid'))
+                        <a class="text-white pr-3" href="user_logout">logout</a>
+                        @else
+                        <span class="text-white"></span>
+                        <a class="text-white px-3" href="signup">signup</a>
+                        @endif
                     </div>
                 </div>
-                <div class="col-md-6 text-center text-lg-right">
+                <div class="col-md-4 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        @if(session()->has('uid'))
+                            <a class="text-white pr-3" href="">Hi {{session()->get('uname')}}</a>
+                            <span class="text-white">|</span>
+                            <a class="text-white px-3" href="user_profile">Profile</a>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-4 text-center text-lg right">
                     <div class="d-inline-flex align-items-center">
                         <a class="text-white px-3" href="">
                             <i class="fab fa-facebook-f"></i>
@@ -83,6 +89,7 @@ function active($currect_page)
                         </a>
                     </div>
                 </div>
+              
             </div>
         </div>
     </div>
@@ -114,7 +121,9 @@ function active($currect_page)
                         <a href="contact" class="nav-item nav-link <?php echo active('Contact')?>">Contact</a>
                     </div>
                 </div>
-            </nav>
         </div>
+    </div>
+    </nav>
+    </div>
     </div>
     <!-- Navbar End -->

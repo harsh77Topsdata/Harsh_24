@@ -29,7 +29,24 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|alpha:ascii |max:255',
+            'email' => 'required',
+            'mobile' => 'required|digits:10',           
+            'comment'=> 'required|max:255'
+        ]);
+
+        $data=new contact();
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->mobile=$request->mobile;
+        $data->comment=$request->comment;
+
+        $data->save();
+        
+        return redirect('/contact');
+
+
     }
 
     /**
@@ -61,8 +78,9 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(contact $contact)
+    public function destroy(contact $contact,$id)
     {
-        //
+        $data=contact::find($id)->delete();
+        return redirect('/manage_contact');
     }
 }

@@ -22,6 +22,7 @@
             </div>
         </div>
         <div class="container">
+        <a href="add_catgories" class="btn btn-primary mb-2">Add catgories</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -36,10 +37,10 @@
                     <tr>
                         <td>{{$d->id}}</td>
                         <td>{{$d->cat_name}}</td>
-                        <td>{{$d->cat_image}}</td>
+                        <td><img src="{{url('admin/upload/catgory/'.$d->cat_img)}}" width="50px"> </td>
                         <td>
                             <a href="edit_catgoaries" class="btn btn-primary">Edit</a>
-                            <a href="delete_catgoaries" class="btn btn-primary">Delete</a>
+                            <a href="{{url('manage_catgories/'.$d->id)}}" class="btn btn-primary">Delete</a>
                         </td>
                     </tr>
                     @endforeach

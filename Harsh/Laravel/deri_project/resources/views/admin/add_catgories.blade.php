@@ -24,27 +24,24 @@
         <div class="row justify-content-center">
             <div class="col-lg-9">
                 <div class="contact-form bg-light rounded p-5">
-                    <div class="float-right">
-                        
-                        <a href="manage_catgories" class="btn btn-primary mb-2">Manage catgories</a>
-                    </div>
+                        <a href="manage_catgories" class="btn btn-primary mb-3">Manage catgories</a>
                     <div id="success"></div>
-                    <form name="sentMessage" id="Form" method="post" novalidate="novalidate">
-                      
-                            <div class="col-sm-12 control-group">
-                                <input type="text" class="form-control p-4" id="name"
-                                    placeholder="Enter catgoaries name" required="required"
-                                    data-validation-required-message="Please enter your name" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                       
-                        <div class="form-group">
-                            <label for="File">Plese uploade catgoaries image</label>
-                            <input type="file" class="form-control-file" id="image">
+                    <form name="sentMessage" action="{{url('/add_catgories')}}" id="Form" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="col-sm-12 control-group mb-3">
+                            <input type="text" class="form-control p-4" name="cat_name" id="name" placeholder="Enter catgoaries name">
+                            @error('cat_name')
+	                        <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-sm-12 control-group mb-3">
+                                <input type="file" class="form-control p-3" name="cat_img" id="image">
+                                @error('cat_img')
+	                            <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                         </div>
                         <div>
-                            <button class="btn btn-primary btn-block py-3 px-5" type="submit"
-                                id="sendMessageButton">Submit</button>
+                            <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">Submit</button>
                         </div>
                     </form>
                 </div>

@@ -44,7 +44,7 @@
                         <td>{{$d->comment}}</td>
                         <td>
                             <a href="edit_contact" class="btn btn-primary">Edit</a>
-                            <a href="delete_contact" class="btn btn-primary">Delete</a>
+                            <a href="{{url('/manage_contact/'.$d->id)}}" class="btn btn-primary">Delete</a>
                         </td>
                     </tr>
                     @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use App\Http\Controllers\Controller;
+use App\models\catgory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -21,7 +22,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.add_product');
+        $data=catgory::all();
+        return view('admin.add_product',['data'=>$data]);
     }
 
     /**
@@ -29,7 +31,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'pro_name' => 'required|max:255',
+            'pro_image' => 'required|image',
+            'pro_price' => 'required',
+            'qty' => 'required',
+            'description' => 'required'
+        ]);
+
+        $data=new product;
+        $data->cat_id = $request->cat_id;
+        $data->pro_name = $request->pro_name;
+        
+        $file = $request->file('pro_image');
+        $filename = time() . '_image.' . $request->file('pro_image')->getClientOriginalExtension();
+        $file->move('admin/upload/product/', $filename);
+        $data->pro_image =$filename;
+        
+        $data->pro_price=$request->pro_price;
+        $data->qty=$request->qty;
+        $data->description=$request->description;
+
+        $data->save();
+
+        return redirect ('add_product');
     }
 
     /**
@@ -60,8 +85,9 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(product $product)
+    public function destroy(product $product ,$id)
     {
-        //
+        $data=product::find($id)->delete();
+        return redirect('/manage_product');
     }
 }

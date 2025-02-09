@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cate_id')
+            $table->foreignId('cat_id')
                 ->constrained('catgories')
                 ->onDelete('cascade');
             $table->string('pro_name', 60);

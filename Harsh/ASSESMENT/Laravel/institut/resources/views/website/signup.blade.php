@@ -41,26 +41,18 @@
                         <form method="post" name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="form-row">
                                 <div class="col-sm-12 control-group">
-                                    <input type="text" class="form-control p-4" name="name" id="name"
-                                        placeholder="Your Name" required="required"
-                                        data-validation-required-message="Please enter your name" />
+                                    <input type="text" class="form-control p-4" name="name" id="name" placeholder="Your Name" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-12 control-group">
-                                    <input type="email" class="form-control p-4" name="email" id="email"
-                                        placeholder="Your Email" required="required"
-                                        data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
+                                    <input type="email" class="form-control p-4" name="email" id="email" placeholder="Your Email"></p>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-6 control-group">
-                                    <input type="password" class="form-control p-4" name="password" id="password"
-                                        placeholder="Your password" required="required"
-                                        data-validation-required-message="Please enter your password"/>
-                                    <p class="help-block text-danger"></p>
+                                    <input type="password" class="form-control p-4" name="password" id="password" placeholder="Your password"></p>
                                 </div>
                             </div>
                             <br>
@@ -78,12 +70,10 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                <input type="file" class="form-control-file" name="image" id="image" required>plese
-                                uploade your photo</input>
+                                <input type="file" class="form-control-file" name="image" id="image">plese uploade your photo</input>
                             </div>
                             <div>
-                                <button class="btn btn-primary btn-block py-3 px-5" type="submit"
-                                    id="submit">submit</button>
+                                <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="submit">submit</button>
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-12 control-group">

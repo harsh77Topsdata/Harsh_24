@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('gen');
             $table->string('lang');
             $table->string('image');
+            $table->enum('status',['Block','Unblock'])->default('Unblock');
             $table->timestamps();
         });
     }

@@ -40,6 +40,46 @@ Route::get('*', function () {
 
 //-----------------------------Adnin-------------------------------//
 
-Route::get('dashboard', function () {
+Route::get('/admin_login', function () {
     return view('admin.index');
+});
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/add_book', function () {
+    return view('admin.add_book');
+});
+
+Route::get('/manage_book', function () {
+    return view('admin.manage_book');
+});
+
+Route::get('/add_department', function () {
+    return view('admin.add_department');
+});
+
+Route::get('/manage_department', function () {
+    return view('admin.manage_department');
+});
+
+Route::get('/add_teacher', function () {
+    return view('admin.add_teacher');
+});
+
+Route::get('/manage_teacher', function () {
+    return view('admin.manage_teacher');
+});
+
+Route::get('/manage_contact', function () {
+    return view('admin.manage_contact');
+});
+
+Route::get('/manage_student', function () {
+    return view('admin.manage_student');
+});
+
+Route::get('*', function () {
+    return view('admin.pnf');
 });

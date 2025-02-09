@@ -22,10 +22,12 @@
             </div>
         </div>
         <div class="container">
+        <a href="add_product" class="btn btn-primary float-right mb-2">Add product</a>
             <table class="table table-striped">
             <thead>
                     <tr>
                         <th>id</th>
+                        <th>cat_id</th>
                         <th>pro_name</th>
                         <th>pro_image</th>
                         <th>pro_price</th>
@@ -39,15 +41,16 @@
                     @foreach($data as $d)
                     <tr>
                         <td>{{$d->id}}</td>
+                        <td>{{$d->cat_id}}</td>
                         <td>{{$d->pro_name}}</td>
-                        <td>{{$d->pro_image}}</td>
+                        <td><img src="{{url('admin/upload/product/'.$d->pro_image)}}" width="50px"></td>
                         <td>{{$d->pro_price}}</td>
                         <td>{{$d->qty}}</td>
                         <td>{{$d->description}}</td>
                         <td>{{$d->status}}</td>
                         <td>
                             <a href="edit_product" class="btn btn-primary">Edit</a>
-                            <a href="delete_product" class="btn btn-primary">Delete</a>
+                            <a href="{{url('/manage_product/'.$d->id)}}" class="btn btn-primary">Delete</a>
                         </td>
                     </tr>
                     @endforeach

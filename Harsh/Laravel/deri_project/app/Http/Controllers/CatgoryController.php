@@ -21,7 +21,8 @@ class CatgoryController extends Controller
      */
     public function create()
     {
-        return view('admin.add_catgoaries');
+        //
+        return view('admin.add_catgories');
     }
 
     /**
@@ -29,7 +30,24 @@ class CatgoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'cat_name' => 'required|max:255',
+            'cat_img' => 'required|image'
+        ]);
+
+        $data=new catgory;
+        $data->cat_name = $request->cat_name;
+        
+        $file=$request->file('cat_img');		
+        $filename=time().'_img.'.$request->file('cat_img')->getClientOriginalExtension();
+        $file->move('admin/upload/catgory/',$filename);  
+        $data->cat_img=$filename;
+
+        
+        $data->save();
+
+        return redirect('/add_catgories');
+
     }
 
     /**
@@ -60,8 +78,10 @@ class CatgoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(catgory $catgory)
+    public function destroy(catgory $catgory,$id)
     {
-        //
+        $data=catgory::find($id)->delete();
+        return redirect('/manage_catgories');
+
     }
 }
