@@ -27,13 +27,13 @@
                     <h4 class="font-weight-bold mb-3">Edit User Profile</h4>
                     <h5 class="text-muted mb-3">ID : {{$data->id}}</h5>
                     <h5 class="text-muted mb-3">Name : {{$data->name}}</h5>
-                    <p>Gender : {{$data->gender}}</p>
-                    <p>Launguages : {{$data->lag}}</p>
+                    <h5>Gender : {{$data->gen}}</h5>
+                    <h5>Launguages : {{$data->lang}}</h5>
                     <a href="{{url('user_profile/' . $data->id)}}" class="btn btn-primary mt-2">Edit Profile</a>
                 </div>
                 <div class="col-lg-4" style="min-height: 400px;">
                     <div class="position-relative h-100 rounded overflow-hidden">
-                        <img class="position-absolute w-100 h-100" src="{{ url('website/upload/users/' . $data->img)}}"
+                        <img class="position-absolute w-100 h-100" src="{{ url('website/upload/users/' . $data->image)}}"
                             style="object-fit: cover;">
                     </div>
                 </div>

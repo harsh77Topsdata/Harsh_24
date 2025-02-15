@@ -100,7 +100,7 @@ function active($currect_page)
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
-                <a href="index" class="navbar-brand d-block d-lg-none">
+                <a href="{{url('index')}}" class="navbar-brand d-block d-lg-none">
                     <h1 class="m-0 display-4 text-primary"><span class="text-secondary">O</span>SWEETS</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -111,14 +111,15 @@ function active($currect_page)
                 </a>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index" class="nav-item nav-link <?php echo active('Home')?>">Home</a>
-                        <a href="about" class="nav-item nav-link <?php echo active('About')?>">About</a>
-                        <a href="product" class="nav-item nav-link <?php echo active('Product')?>">Product</a>
+                        <a href="{{url('index')}}" class="nav-item nav-link <?php echo active('Home')?>">Home</a>
+                        <a href="{{url('about')}}" class="nav-item nav-link <?php echo active('About')?>">About</a>
+                        <a href="{{url('catgories')}}" class="nav-item nav-link <?php echo active('Catgories')?>">Catgories</a>
                     </div>
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="service" class="nav-item nav-link <?php echo active('Service')?>">Service</a>
-                        <a href="gallery" class="nav-item nav-link <?php echo active('Gallery')?>">Gallery</a>
-                        <a href="contact" class="nav-item nav-link <?php echo active('Contact')?>">Contact</a>
+                        <a href="{{url('service')}}" class="nav-item nav-link <?php echo active('Service')?>">Service</a>
+                        <a href="{{url('gallery')}}" class="nav-item nav-link <?php echo active('Gallery')?>">Gallery</a>
+                        <a href="{{url('contact')}}" class="nav-item nav-link <?php echo active('Contact')?>">Contact</a>
+                        
                     </div>
                 </div>
         </div>

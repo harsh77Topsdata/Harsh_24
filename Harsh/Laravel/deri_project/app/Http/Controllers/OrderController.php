@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\order;
+use App\Models\product;
+use App\Models\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -11,9 +13,17 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
+        $data=product::where('id',$id)->where('status','Instock')->first();
+        return view('website.order',['d'=>$data]);
         
+    }
+
+    public function user_data($email)
+    {
+       // $user = User::where('email', $email)->first();
+        // return $user->user_id; 
     }
 
     /**
@@ -21,7 +31,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminLoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CatgoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,11 +39,12 @@ Route::get('/gallery', function () {
     return view('website.gallery');
 });
 
-Route::get('/service', function () {
-    return view('website.service');
-});
+Route::get('/order/{id}',[OrderController::class,'index']);
+// Route::get('/order/{email}',[OrderController::class,'user_data']);
 
-Route::get('/product',[ProductController::class,'index']);
+Route::get('/product/{id}',[ProductController::class,'index']);
+
+Route::get('/catgories',[CatgoryController::class,'index']);
 
 
 
@@ -52,9 +55,10 @@ Route::get('*', function () {
 
 //-------------------ADMIN-----------------//
 
-Route::get('/admin-login', function () {
-    return view('admin.index');
-});
+Route::get('/admin_login',[AdminLoginController::class,'admin_login']);
+Route::post('/admin_auth',[AdminLoginController::class,'admin_auth']);
+Route::get('/admin_logout',[AdminLoginController::class,'admin_logout']);
+
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
@@ -78,3 +82,5 @@ Route::get('/manage_catgories/{id}',[CatgoryController::class,'destroy']);
 Route::get('*', function () {
     return view('admin.pnf');
 });
+
+

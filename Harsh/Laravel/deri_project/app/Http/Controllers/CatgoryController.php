@@ -13,7 +13,8 @@ class CatgoryController extends Controller
      */
     public function index()
     {
-        
+        $data=catgory::All();
+        return view('/website.catgories', ['data'=>$data]);
     }
 
     /**

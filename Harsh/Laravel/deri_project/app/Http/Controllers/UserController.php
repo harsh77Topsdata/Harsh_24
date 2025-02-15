@@ -12,6 +12,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 
 
+
 class UserController extends Controller
 {
     /**
@@ -38,13 +39,13 @@ class UserController extends Controller
             }
             else
             {
-                Alert::success('login failed',"Password doesn't match");
+                Alert::error('login failed',"Password doesn't match");
                 return redirect('/login');
             }
         }
         else
         {
-            Alert::success('login failed',"Email doesn't exist");
+            Alert::error('login failed',"Email doesn't exist");
             return redirect('/login');
         }
         
@@ -65,7 +66,7 @@ class UserController extends Controller
     public function user_profile()
     {
         $data=user::where('id',session()->get('uid'))->first();
-        return view('website.user_profile',['$data'=>$data]);
+        return view('website.user_profile',['data'=>$data]);
     }
 
     /**
@@ -102,6 +103,8 @@ class UserController extends Controller
         $data->image = $filename;
 
         $data->save();
+        Alert::success('signup sucess',"Signup sucessfull");
+
         return redirect('/');
     }
 
