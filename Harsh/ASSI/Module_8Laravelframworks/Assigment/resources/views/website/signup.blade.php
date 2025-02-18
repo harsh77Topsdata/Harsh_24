@@ -49,6 +49,7 @@
 
 </head>
 <body>
+@include('sweetalert::alert')
 <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row justify-content-center">
@@ -59,7 +60,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="signup-form bg-light rounded p-5">
-                        <form method="post" action="" name="sentMessage" enctype="multipart/form-data">
+                        <form method="post" action="{{ url('/user_signup') }}" name="sentMessage" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="col-sm-12 control-group mb-2">

@@ -1,8 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\TecherController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\Controller\ContactController;
 
-Route::get('/index', function () {
+
+Route::get('/', function () {
     return view('website.home');
 });
 
@@ -24,13 +30,12 @@ Route::get('/single', function () {
 });
 
 
-Route::get('/login', function () {
-    return view('website.login');
-});
+Route::get('/login',[StudentController::class,'login']);
 
-Route::get('/signup', function () {
-    return view('website.signup');
-});
+Route::get('/signup',[StudentController::class,'create']);
+Route::post('/insert_signup',[StudentController::class,'store']);
+
+
 
 Route::get('*', function () {
     return view('website.pnf');
@@ -41,7 +46,7 @@ Route::get('*', function () {
 //-----------------------------Adnin-------------------------------//
 
 Route::get('/admin_login', function () {
-    return view('admin.index');
+    return view('admin.admin_login');
 });
 
 Route::get('/dashboard', function () {
@@ -76,9 +81,8 @@ Route::get('/manage_contact', function () {
     return view('admin.manage_contact');
 });
 
-Route::get('/manage_student', function () {
-    return view('admin.manage_student');
-});
+Route::get('/manage_student',[StudentController::class,'show']);
+
 
 Route::get('*', function () {
     return view('admin.pnf');

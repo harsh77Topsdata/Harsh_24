@@ -89,17 +89,12 @@ function active($currect_page){
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index" class="nav-item nav-link <?php active('home')?>">Home</a>
-                            <a href="about" class="nav-item nav-link <?php active('about')?>">About</a>
-                            <a href="teacher" class="nav-item nav-link <?php active('manage_teacher')?>">Teachers</a>
-                            <a href="contact" class="nav-item nav-link <?php active('manage_contact')?>">Contact</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle <?php active('student')?>" data-toggle="dropdown">Student</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="login" class="dropdown-item">Login</a>
-                                    <a href="signup" class="dropdown-item">Signup</a>
-                                </div>
-                            </div>
+                            <a href="{{url('/dashboard')}}" class="nav-item nav-link <?php active('home')?>">Home</a>
+                            <a href="{{url('/manage_department')}}" class="nav-item nav-link <?php active('department')?>">Department</a>
+                            <a href="{{url('/add_book')}}" class="nav-item nav-link <?php active('book')?>">Book</a>
+                            <a href="{{url('/add_teacher')}}" class="nav-item nav-link <?php active('teachers')?>">Teachers</a>
+                            <a href="{{url('/manage_student')}}" class="nav-item nav-link <?php active('student')?>">Student</a>
+                            <a href="{{url('/manage_contact')}}" class="nav-item nav-link <?php active('contact')?>">Contact</a>
                         </div>
                     </div>
                 </nav>

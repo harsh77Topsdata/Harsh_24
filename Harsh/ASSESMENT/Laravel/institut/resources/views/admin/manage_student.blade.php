@@ -31,7 +31,6 @@
                         <th>Id</th>
                         <th>name</th>
                         <th>email</th>
-                        <th>password</th>
                         <th>gen</th>
                         <th>lang</th>
                         <th>image</th>
@@ -39,6 +38,22 @@
                      </tr>
                 </thead>
                 <tbody>
+                <tbody>
+                    @foreach($data as $d)
+                        <tr>
+                            <td><?php echo $d->id;?></td>
+                            <td><?php echo $d->name;?></td>
+                            <td><?php echo $d->email;?></td>
+                            <td><?php echo $d->gen;?></td>
+                            <td><?php echo $d->lang;?></td>
+                            <td><img src="{{ url('website/upload/users/'.$d->image)}}" style="width:50px;object-fit: cover;"></td>
+                            <td>
+                                <a href="" class="btn btn-primary">Edit</a>
+                                <a href="" class="btn btn-primary">Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
                 </tbody>
             </table>
         </div>

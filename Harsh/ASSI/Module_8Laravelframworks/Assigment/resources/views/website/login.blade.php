@@ -50,6 +50,7 @@
 </head>
 
 <body>
+@include('sweetalert::alert')
     <!-- Section: Design Block -->
     <section class="text-center text-lg-start">
         <style>
@@ -71,7 +72,8 @@
                     <div class="card cascading-right bg-body-tertiary" style="backdrop-filter: blur(30px);">
                         <div class="card-body p-5 shadow-5 text-center">
                             <h2 class="fw-bold mb-5">Login Now</h2>
-                            <form></form>
+                            <form method="post" action="{{url('/user_auth')}}" name="sentMessage" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-row">
                                 <div class="col-sm-12 mb-2 control-group">
                                     <input type="email" class="form-control p-2" name="email" id="email"

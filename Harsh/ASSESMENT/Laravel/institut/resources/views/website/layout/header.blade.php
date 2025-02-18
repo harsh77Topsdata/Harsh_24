@@ -111,15 +111,15 @@ function active($currect_page){
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index" class="nav-item nav-link <?php active('home')?>">Home</a>
-                            <a href="about" class="nav-item nav-link <?php active('about')?>">About</a>
-                            <a href="teacher" class="nav-item nav-link <?php active('teacher')?>">Teachers</a>
-                            <a href="contact" class="nav-item nav-link <?php active('contact')?>">Contact</a>
+                            <a href="{{url('/index')}}" class="nav-item nav-link <?php active('home')?>">Home</a>
+                            <a href="{{url('/about')}}" class="nav-item nav-link <?php active('about')?>">About</a>
+                            <a href="{{url('/teacher')}}" class="nav-item nav-link <?php active('teacher')?>">Teachers</a>
+                            <a href="{{url('/contact')}}" class="nav-item nav-link <?php active('contact')?>">Contact</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle <?php active('student')?>" data-toggle="dropdown">Student</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="login" class="dropdown-item">Login</a>
-                                    <a href="signup" class="dropdown-item">Signup</a>
+                                    <a href="{{url('/login') }}" class="dropdown-item">Login</a>
+                                    <a href="{{url('/signup') }}" class="dropdown-item">Signup</a>
                                 </div>
                             </div>
                         </div>

@@ -30,14 +30,14 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-form bg-secondary rounded p-5">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm">
+                        <form name="sentMessage" method="post" action="{{ url('/') }}" enctype="multipart/form-data" >
+                            @csrf
                             <div class="control-group">
                                 <input type="text" class="form-control border-0 p-4" name="email" id="email" placeholder="Your Email" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control border-0 p-4" name="password" id="password" placeholder="Your password"/>
+                                <input type="text" class="form-control border-0 p-4" name="password" id="password" placeholder="Your password"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-center">

@@ -1,38 +1,47 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CatgoryController;
 
 Route::get('/', function () {
     return view('.website.home');
 });
 
-Route::get('/blog', function () {
-    return view('.website.blog');
+
+Route::get('/single', function () {
+    return view('.website.single');
 });
 
 Route::get('/category', function () {
     return view('.website.category');
 });
 
-Route::get('/contact', function () {
-    return view('.website.contact');
-});
+Route::get('/login',[UserController::class,'login']);
+Route::post('/user_auth',[UserController::class,'user_auth']);
+Route::get('/signup',[UserController::class,'create']);
+Route::post('/signup',[UserController::class,'store']);
+Route::get('/logout',[UserController::class,'logout']);
 
-Route::get('/single', function () {
-    return view('.website.single');
-});
 
-Route::get('/login', function () {
-    return view('.website.login');
-});
+Route::get('/Blog',[BlogController::class,'show']);
+Route::get('/creat_blog',[BlogController::class,'create']);
+Route::post('/creat_blog',[BlogController::class,'store']);
+Route::get('/Publish/{id}',[BlogController::class,'publish']);
+Route::get('/Post/{title}',[BlogController::class,'view']);
+Route::get('/Edit/{id}',[BlogController::class,'edit']);
+Route::post('/Edit/{id}',[BlogController::class,'update']);
+Route::get('/Delete/{id}',[BlogController::class,'destroy']);
 
-Route::get('/signup', function () {
-    return view('.website.login');
-});
 
-Route::get('/profile', function () {
-    return view('.website.user_profile');
-});
+
+Route::get('/Contact',[ContactController::class,'show']);
+Route::post('/Contact',[ContactController::class,'store']);
+
+Route::get('/Profile',[UserController::class,'show']);
 
 Route::get('*', function () {
     return view('website.pnf');

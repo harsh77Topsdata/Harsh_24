@@ -37,8 +37,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="contact-form bg-light rounded p-5">
-                        <div id="success"></div>
-                        <form method="post" name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form method="post" name="sentMessage" action="{{url('/insert_signup')}}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-row">
                                 <div class="col-sm-12 control-group">
                                     <input type="text" class="form-control p-4" name="name" id="name" placeholder="Your Name" />
@@ -51,22 +51,22 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-sm-6 control-group">
+                                <div class="col-sm-12 control-group">
                                     <input type="password" class="form-control p-4" name="password" id="password" placeholder="Your password"></p>
                                 </div>
                             </div>
                             <br>
                             <div class="control-group">
                                <h5>Gender : </h5> 
-                                Male  <input type="radio" name="gender" value="Male" class="p-4"/>
-                                Female <input type="radio" name="gender" value="Female" class="p-4"/>
+                                Male  <input type="radio" name="gen" value="Male" class="p-4"/>
+                                Female <input type="radio" name="gen" value="Female" class="p-4"/>
                             </div>
                             <br>
                             <div class="control-group">
                                <h5>Language : </h5>
-                                Hindi <input type="checkbox" name="lag" value="Hindi" class="p-4"/>
-                                English <input type="checkbox" name="lag" value="English" class="p-4"/>
-                                Gujarati <input type="checkbox" name="lag" value="Gujarati" class="p-4"/> 
+                                Hindi <input type="checkbox" name="lang[]" value="Hindi" class="p-4"/>
+                                English <input type="checkbox" name="lang[]" value="English" class="p-4"/>
+                                Gujarati <input type="checkbox" name="lang[]" value="Gujarati" class="p-4"/> 
                             </div>
                             <br>
                             <div class="form-group">

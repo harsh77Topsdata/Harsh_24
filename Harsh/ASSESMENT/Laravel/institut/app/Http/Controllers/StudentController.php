@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\student;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function login()
     {
-        //
+        return view('website.login');
     }
 
     /**
@@ -21,7 +22,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('/website.signup');
     }
 
     /**
@@ -29,7 +30,21 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new student;
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=Hash::make($request->password);
+        $data->lang = implode(",", $request->lang);
+        $data->gen=$request->gen;
+        
+        // img upload
+        $file = $request->file('image');
+        $filename = time() . '_image.' . $request->file('image')->getClientOriginalExtension();
+        $file->move('website/upload/users/', $filename);  // use move for move image in public/images
+        $data->image = $filename;
+
+        $data->save();
+
     }
 
     /**
@@ -37,7 +52,9 @@ class StudentController extends Controller
      */
     public function show(student $student)
     {
-        //
+        $data=student::all();
+        return view('/admin.manage_student',['data'=>$data]);
+
     }
 
     /**
