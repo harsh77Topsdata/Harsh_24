@@ -26,14 +26,14 @@
     </div>
 
     <div class="container">
-        <form action="{{url('/CreateBlog')}}" method="POST" enctype="multipart/form-data" class="form-control mt-5">
+        <form action="{{url('/creat_blog')}}" method="POST" enctype="multipart/form-data" class="form-control mt-5">
             @csrf
             <div class="form-group p-3 mb-3">
                 <label for="category" class="form-label">Category</label>
-                <select name="category" class="form-control">
+                <select name="catgory" class="form-control">
 
                     @foreach ($data as $c)
-                        <option value="{{$c->id}}">{{$c->category_name}}</option>
+                        <option value="{{$c->id}}">{{$c->cat_name}}</option>
                     @endforeach
                 </select>
                 @error('category')

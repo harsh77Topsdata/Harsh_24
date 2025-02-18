@@ -19,10 +19,10 @@ class BlogController extends Controller
     public function index()
     {
         //
-        $data=blog::join('catgories','catgories.id','=','blogs.cate_id')
+        $data=blog::join('catgories','catgories.id','=','blogs.cat_id')
         ->join('users','users.id','=','blogs.user_id')
         ->where('blogs.status','published')->get(['blogs.*','catgories.cat_name','users.name']);
-        return view('website.index',['data'=>$data]);
+        return view('website.home',['data'=>$data]);
     }
 
     /**
@@ -32,7 +32,7 @@ class BlogController extends Controller
     {
         //
         $data=catgory::all();
-        return view('website.create_blog',['data'=>$data]);
+        return view('website.blog_create',['data'=>$data]);
 
     }
 
@@ -43,7 +43,7 @@ class BlogController extends Controller
     {
         //
         $validated = $request->validate([
-            'title' => 'required|unqiue:blogs',
+            'title' => 'required|unique:blogs',
             'content' => 'required',
             'blog_image'=>'required|image'
         ]);

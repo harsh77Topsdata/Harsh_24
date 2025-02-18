@@ -7,9 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CatgoryController;
 
-Route::get('/', function () {
-    return view('.website.home');
-});
+Route::get('/',[BlogController::class,'index']);
 
 
 Route::get('/single', function () {
@@ -39,7 +37,7 @@ Route::get('/Delete/{id}',[BlogController::class,'destroy']);
 
 
 Route::get('/Contact',[ContactController::class,'show']);
-Route::post('/Contact',[ContactController::class,'store']);
+Route::post('/user_contact',[ContactController::class,'store']);
 
 Route::get('/Profile',[UserController::class,'show']);
 

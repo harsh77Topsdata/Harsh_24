@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\blog;
 use App\Models\post;
 use App\Models\User;
 use App\Models\catgory;
@@ -107,10 +108,10 @@ class UserController extends Controller
         //$cust_id
         $data=user::find(session('uid'));
         
-        $post=post::join('users','users.id','=','posts.user_id')
-        ->join('catgories','catgories.id','=','posts.cat_id')
+        $post=blog::join('users','users.id','=','blogs.user_id')
+        ->join('catgories','catgories.id','=','blogs.cat_id')
         ->where('user_id',session('uid'))
-        ->get(['posts.*','catgories.cat_name']);
+        ->get(['blogs.*','catgories.cat_name']);
         return view('website.user_profile',['data'=>$data],['post'=>$post]);
     }
 
