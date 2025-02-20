@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\department;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class DepartmentController extends Controller
 {
@@ -13,7 +15,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.add_department');
     }
 
     /**
@@ -29,7 +31,13 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new department;
+        $data->dept_name=$request->dept_name;
+        $data->head_name=$request->head_name;
+
+        $data->save();
+        return redirect('/add_department');
+
     }
 
     /**
@@ -37,7 +45,8 @@ class DepartmentController extends Controller
      */
     public function show(department $department)
     {
-        //
+        $data=department::all();
+        return view('admin.manage_department',['data'=>$data]);
     }
 
     /**

@@ -36,6 +36,7 @@ function active($currect_page){
 </head>
 
 <body>
+@include('sweetalert::alert')
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center py-4 px-xl-5">

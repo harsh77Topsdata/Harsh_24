@@ -28,15 +28,17 @@
                 <div class="col-lg-8">
                     <div class="contact-form bg-secondary rounded p-5">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm">
+                        <form name="sentMessage" action="{{ url('/add_department') }}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" name='name' id="name" placeholder="Your Name"/>
+                                <input type="text" class="form-control border-0 p-4" name='dept_name' id="dept_name" placeholder="department Name"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="description" placeholder="description"></textarea>
+                                <input type="text" class="form-control border-0 p-4" name='head_name' id="head_name" placeholder="head Name"/>
                                 <p class="help-block text-danger"></p>
                             </div>
+                           
                             <div class="text-center">
                                 <button class="btn btn-primary py-3 px-5" type="submit" id="submit">Submit</button>
                             </div>

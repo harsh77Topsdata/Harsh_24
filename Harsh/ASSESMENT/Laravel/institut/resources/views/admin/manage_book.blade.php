@@ -25,6 +25,7 @@
             <h1>Book For Any Query</h1>
         </div>
         <div class="container">
+        <a href="add_book" class="btn btn-primary mb-2">Add Book</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -36,6 +37,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($data as $d)
+                    <tr>
+                        <td>{{$d->id}}</td>
+                        <td>{{$d->book_name}}</td>
+                        <td>{{$d->subject}}</td>
+                        <td>{{$d->description}}</td>
+                        
+                        <td>
+                            <a href="edit_user" class="btn btn-primary">Edit</a>
+                            <a href="delete_user" class="btn btn-primary">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

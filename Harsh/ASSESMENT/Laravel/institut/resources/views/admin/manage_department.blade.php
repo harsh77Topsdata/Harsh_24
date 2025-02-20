@@ -37,6 +37,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($data as $d)
+                    <tr>
+                        <td>{{$d->id}}</td>
+                        <td>{{$d->dept_name}}</td>
+                        <td>{{$d->head_name}}</td>
+                        <td>
+                            <a href="edit_user" class="btn btn-primary">Edit</a>
+                            <a href="delete_user" class="btn btn-primary">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

@@ -30,13 +30,18 @@
                 <div class="col-lg-8">
                     <div class="contact-form bg-secondary rounded p-5">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm">
+                        <form name="sentMessage" action="{{ url('/add_teacher') }}" method="post"  enctype="multipart/form-data">
+                            @csrf
                             <div class="control-group">
                                 <input type="text" class="form-control border-0 p-4" name="name" id="name" placeholder="Your Name"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
                                 <input type="email" class="form-control border-0 p-4" name="email" id="email" placeholder="Your Email"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="password" class="form-control border-0 p-4" name="password" id="password" placeholder="Your password"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
@@ -53,8 +58,11 @@
                                 <br> <br> 
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" name="subject"  id="subject" placeholder="Subject" />
+                                <input type="text" class="form-control border-0 p-4" name="subject" value="subject"  id="subject" placeholder="Subject" />
                                 <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control-file" name="image" value="image"  id="image">plese uploade your photo</input>
                             </div>
                             
                             <div class="text-center">

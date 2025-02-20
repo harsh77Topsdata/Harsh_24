@@ -26,11 +26,13 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                <a href="manage_book" class="btn btn-primary mb-2"> Manage Book</a>
                     <div class="contact-form bg-secondary rounded p-5">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm">
+                        <form name="sentMessage" action="{{ url('/add_book') }}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" nam="book_name" id="book_name" placeholder="Book Name"/>
+                                <input type="text" class="form-control border-0 p-4" name="book_name" id="book_name" placeholder="Book Name"/>
                                 <p class="help-block text-danger"></p>
                             </div>  
                             <div class="control-group">

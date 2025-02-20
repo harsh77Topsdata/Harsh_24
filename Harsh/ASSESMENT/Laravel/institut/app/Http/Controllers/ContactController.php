@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class ContactController extends Controller
 {
@@ -13,7 +15,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('/website.contact');
     }
 
     /**
@@ -37,7 +39,7 @@ class ContactController extends Controller
      */
     public function show(contact $contact)
     {
-        //
+        return view('admin.manage-contact');
     }
 
     /**
