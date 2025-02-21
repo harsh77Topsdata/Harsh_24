@@ -21,6 +21,8 @@ Route::get('/single', function () {
 });
 
 Route::get('/contact',[ContactController::class,'index']);
+Route::post('/insert_contact',[ContactController::class,'store']);
+
 
 Route::get('/teacher',[TecherController::class,'index']);
 

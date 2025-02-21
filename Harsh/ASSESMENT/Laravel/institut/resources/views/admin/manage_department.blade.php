@@ -26,6 +26,7 @@
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Contact</h5>
                 <h1>Contact For Any Query</h1>
             </div>
+            <a href="add_department" class="btn btn-primary mb-2">Add Department</a>
             <div class="container">
             <table class="table">
                 <thead>

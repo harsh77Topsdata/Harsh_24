@@ -31,11 +31,25 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Description</th>
+                        <th>Subject</th>
+                        <th>Message</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($data as $d)
+                    <tr>
+                        <td>{{$d->id}}</td>
+                        <td>{{$d->name}}</td>
+                        <td>{{$d->email}}</td>
+                        <td>{{$d->subject}}</td>
+                        <td>{{$d->message}}</td>
+                        <td>
+                            <a href="edit_user" class="btn btn-primary">Edit</a>
+                            <a href="delete_user" class="btn btn-primary">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

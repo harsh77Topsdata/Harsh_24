@@ -26,6 +26,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                    <a href="manage_department" class="btn btn-primary mb-2"> Manage Department</a>
                     <div class="contact-form bg-secondary rounded p-5">
                         <div id="success"></div>
                         <form name="sentMessage" action="{{ url('/add_department') }}" method="post" enctype="multipart/form-data">

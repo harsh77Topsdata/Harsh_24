@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\contact;
+use App\Models\club;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 
-
-class ContactController extends Controller
+class ClubController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('/website.contact');
+        //
     }
 
     /**
@@ -23,7 +21,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('')
     }
 
     /**
@@ -31,30 +29,21 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $data=new contact();
-        $data->name=$request->name;
-        $data->email=$request->email;
-        $data->subject=$request->subject;
-        $data->message=$request->message;
-
-        $data->save();
-
-        return redirect('/');
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(contact $contact)
+    public function show(club $club)
     {
-        $data=contact::all();
-        return view('admin.manage_contact',['data'=>$data]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(contact $contact)
+    public function edit(club $club)
     {
         //
     }
@@ -62,7 +51,7 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, contact $contact)
+    public function update(Request $request, club $club)
     {
         //
     }
@@ -70,7 +59,7 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(contact $contact)
+    public function destroy(club $club)
     {
         //
     }

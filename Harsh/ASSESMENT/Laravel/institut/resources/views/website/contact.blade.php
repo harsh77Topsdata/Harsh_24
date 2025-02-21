@@ -30,21 +30,22 @@
                 <div class="col-lg-8">
                     <div class="contact-form bg-secondary rounded p-5">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form name="sentMessage" method="post" action="{{ url('/insert_contact') }}" enctype="multipart/form-data">
+                            @csrf
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" class="form-control border-0 p-4" name="name" id="name" placeholder="Your Name"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <input type="email" class="form-control border-0 p-4" name="email" id="email" placeholder="Your Email"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control border-0 p-4" name="subject" id="subject" placeholder="Subject" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control border-0 py-3 px-4" rows="5" name="message" id="message" placeholder="Message" ></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-center">
