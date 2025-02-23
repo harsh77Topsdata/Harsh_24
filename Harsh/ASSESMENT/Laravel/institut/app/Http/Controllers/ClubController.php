@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\club;
+use App\Models\student;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -21,7 +23,8 @@ class ClubController extends Controller
      */
     public function create()
     {
-        return view('')
+        $student=student::all();
+        return view('admin.add_club',['student'=>$student]);
     }
 
     /**
@@ -29,7 +32,13 @@ class ClubController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new club;
+        $data->c_name=$request->c_name;
+        $data->s_detail=$request->s_detail;
+        $data->c_head=$request->c_head;
+        
+        $data->save();
+        return redirect('/add_club');
     }
 
     /**
@@ -37,7 +46,9 @@ class ClubController extends Controller
      */
     public function show(club $club)
     {
-        //
+        $data=club::all();
+        
+        return view('admin.manage_club',['data'=>$data]);
     }
 
     /**

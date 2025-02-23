@@ -1,11 +1,14 @@
 <?php
 
+
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\TecherController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ClubController;
 
 
 Route::get('/', function () {
@@ -39,9 +42,10 @@ Route::get('*', function () {
 
 //-----------------------------Adnin-------------------------------//
 
-Route::get('/admin_login', function () {
-    return view('admin.admin_login');
-});
+Route::get('/admin_login',[AdminController::class,'admin_login']);
+Route::post('/admin_auth',[AdminController::class,'admin_auth']);
+Route::get('/admin_logout',[AdminController::class,'admin_logout']);
+
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
@@ -62,6 +66,10 @@ Route::get('/manage_teacher',[TecherController::class,'show']);
 Route::get('/manage_contact',[ContactController::class,'show']);
 
 Route::get('/manage_student',[StudentController::class,'show']);
+
+Route::get('/add_club',[ClubController::class,'create']);
+Route::post('/add_club',[ClubController::class,'store']);
+Route::get('/manage_club',[ClubController::class,'show']);
 
 
 Route::get('*', function () {

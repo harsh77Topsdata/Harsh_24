@@ -95,7 +95,9 @@ function active($currect_page){
                             <a href="{{url('/add_book')}}" class="nav-item nav-link <?php active('book')?>">Book</a>
                             <a href="{{url('/add_teacher')}}" class="nav-item nav-link <?php active('teachers')?>">Teachers</a>
                             <a href="{{url('/manage_student')}}" class="nav-item nav-link <?php active('student')?>">Student</a>
+                            <a href="{{url('/add_club')}}" class="nav-item nav-link <?php active('club')?>">Club</a>
                             <a href="{{url('/manage_contact')}}" class="nav-item nav-link <?php active('contact')?>">Contact</a>
+                            <a href="{{url('/admin_login')}}" class="nav-item nav-link <?php active('Login')?>">Login</a>
                         </div>
                     </div>
                 </nav>

@@ -30,7 +30,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-form bg-secondary rounded p-5">
-                        <form name="sentMessage" method="post" action="{{ url('/') }}" enctype="multipart/form-data" >
+                        <form name="sentMessage" method="post" action="{{ url('/admin_auth') }}" enctype="multipart/form-data" >
                             @csrf
                             <div class="control-group">
                                 <input type="text" class="form-control border-0 p-4" name="email" id="email" placeholder="Your Email" />
