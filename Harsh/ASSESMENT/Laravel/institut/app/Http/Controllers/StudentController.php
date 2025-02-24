@@ -49,6 +49,18 @@ class StudentController extends Controller
 
     }
 
+    public function student_logout(){
+        session()->pull('uname');
+        session()->pull('uid');
+        Alert::success('Logout Success', "User Logout Successful");
+        return redirect('/');
+    }
+
+    public function student_profile(){
+        $data=student::where('id',session()->get('uid'))->first();
+        return view('website.student_profile',['data'=>$data]);
+    }
+
     /**
      * Display the specified resource.
      */

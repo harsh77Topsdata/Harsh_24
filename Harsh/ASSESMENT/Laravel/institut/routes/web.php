@@ -33,6 +33,8 @@ Route::get('/login',[StudentController::class,'login']);
 
 Route::get('/signup',[StudentController::class,'create']);
 Route::post('/insert_signup',[StudentController::class,'store']);
+Route::post('/student_logout',[StudentController::class,'student_logout']);
+Route::post('/student_profile',[StudentController::class,'student_profile']);
 
 Route::get('*', function () {
     return view('website.pnf');
@@ -43,7 +45,7 @@ Route::get('*', function () {
 //-----------------------------Adnin-------------------------------//
 
 Route::get('/admin_login',[AdminController::class,'admin_login']);
-Route::post('/admin_auth',[AdminController::class,'admin_auth']);
+Route::get('/admin_auth',[AdminController::class,'admin_auth']);
 Route::get('/admin_logout',[AdminController::class,'admin_logout']);
 
 

@@ -15,7 +15,7 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function admin()
+    public function admin_login()
     {
         return view('admin.admin_login');
     }
@@ -64,7 +64,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.admin_login');
     }
 
     /**

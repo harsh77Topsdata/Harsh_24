@@ -116,15 +116,16 @@ function active($currect_page){
                             <a href="{{url('/about')}}" class="nav-item nav-link <?php active('about')?>">About</a>
                             <a href="{{url('/teacher')}}" class="nav-item nav-link <?php active('teacher')?>">Teachers</a>
                             <a href="{{url('/contact')}}" class="nav-item nav-link <?php active('contact')?>">Contact</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle <?php active('student')?>" data-toggle="dropdown">Student</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="{{url('/login') }}" class="dropdown-item">Login</a>
-                                    <a href="{{url('/signup') }}" class="dropdown-item">Signup</a>
-                                </div>
-                            </div>
+                            <a href="{{url('/department')}}" class="nav-item nav-link <?php active('department')?>">Department</a>
+                            <a href="{{url('/club')}}" class="nav-item nav-link <?php active('club')?>">Club</a>
+                            @if(session()->has('uid'))
+                            <a class="text-white pl-3" href="student_logout">Logout</a>
+                            @else
+                            <a class="text-white pl-3" href="signup">Signup</a>
+                            @endif
                         </div>
                     </div>
+            </div>
                 </nav>
             </div>
         </div>
