@@ -49,8 +49,8 @@
                         <td><img src="{{url('admin/upload/teach/'.$d->image)}}" width="50px"> </td>
                         <td>{{$d->subject}}</td>
                         <td>
-                            <a href="edit_user" class="btn btn-primary">Edit</a>
-                            <a href="delete_user" class="btn btn-primary">Delete</a>
+                            <a href="edit_teacher" class="btn btn-primary">Edit</a>
+                            <a href="{{url('manage_teacher/'.$d->id)}}" class="btn btn-primary">Delete</a>
                         </td>
                     </tr>
                     @endforeach

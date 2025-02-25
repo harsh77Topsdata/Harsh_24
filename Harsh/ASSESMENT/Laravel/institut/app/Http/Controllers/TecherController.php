@@ -78,8 +78,10 @@ class TecherController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(techer $techer)
+    public function destroy(techer $techer,$id)
     {
-        //
+        $data=techer::find($id)->delete();
+        Alert::success('Delete Success', "techer  Delete Successful");
+        return redirect('/manage_teacher');
     }
 }

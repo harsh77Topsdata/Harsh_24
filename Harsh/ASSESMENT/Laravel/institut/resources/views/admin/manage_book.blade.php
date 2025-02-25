@@ -45,8 +45,8 @@
                         <td>{{$d->description}}</td>
                         
                         <td>
-                            <a href="edit_user" class="btn btn-primary">Edit</a>
-                            <a href="delete_user" class="btn btn-primary">Delete</a>
+                            <a href="edit_book" class="btn btn-primary">Edit</a>
+                            <a href="{{url('manage_book/'.$d->id)}}" class="btn btn-primary">Delete</a>
                         </td>
                     </tr>
                     @endforeach

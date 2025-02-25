@@ -48,8 +48,8 @@
                             <td><?php echo $d->lang;?></td>
                             <td><img src="{{ url('website/upload/users/'.$d->image)}}" style="width:50px;object-fit: cover;"></td>
                             <td>
-                                <a href="" class="btn btn-primary">Edit</a>
-                                <a href="" class="btn btn-primary">Delete</a>
+                                <a href="edit_student" class="btn btn-primary">Edit</a>
+                                <a href="{{url('manage_student/'.$d->id)}}" class="btn btn-primary">Delete</a>
                             </td>
                         </tr>
                     @endforeach

@@ -91,13 +91,15 @@
     </style>
 </head>
 <body>
+@include('sweetalert::alert')
     <div class="container">
         <div class="student">
             <img src="{{url('website/img/student.jpg')}}" alt="Illustration">
         </div>
         <div class="form-container">
             <h2>Student Login</h2>
-            <form action="login" method="POST">
+            <form action="{{ url('/user_auth') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <input type="text" name="username" placeholder="Enter your username/email" required>
                 <input type="password" name="password" placeholder="Enter your password" required>
                 <button type="submit" class="btn">Login In</button>

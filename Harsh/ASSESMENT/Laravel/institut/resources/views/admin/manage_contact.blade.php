@@ -45,8 +45,8 @@
                         <td>{{$d->subject}}</td>
                         <td>{{$d->message}}</td>
                         <td>
-                            <a href="edit_user" class="btn btn-primary">Edit</a>
-                            <a href="delete_user" class="btn btn-primary">Delete</a>
+                            <a href="edit_contact" class="btn btn-primary">Edit</a>
+                            <a href="{{url('manage_contact/'.$d->id)}}" class="btn btn-primary">Delete</a>
                         </td>
                     </tr>
                     @endforeach

@@ -19,6 +19,45 @@ class StudentController extends Controller
         return view('website.login');
     }
 
+    public function user_auth(Request $request)
+    {
+       $data=student::where('email',$request->username)->first();
+       if($data)
+       {
+            if(Hash::check($request->password,$data->password))
+            {
+                session()->put('uname',$data->email);
+                session()->put('uid',$data->id);
+                Alert::success('Login Success', "User Login Successful");
+                return redirect('/');
+            }
+            else
+            {
+                Alert::error('Login Failed', "Password Doesn't Not Match");
+                return redirect('/login');
+            }
+       }
+       else
+       {
+            Alert::error('Login Failed', "Email Doesn't Exist");
+            return redirect('/login');
+       }
+    }
+
+    public function student_logout(){
+        session()->pull('uname');
+        session()->pull('uid');
+        Alert::success('Logout Success', "User Logout Successful");
+        return redirect('/');
+    }
+
+    public function student_profile(){
+        $data=student::where('id',session()->get('uid'))->first();
+        return view('website.student_profile',['data'=>$data]);
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -49,18 +88,7 @@ class StudentController extends Controller
 
     }
 
-    public function student_logout(){
-        session()->pull('uname');
-        session()->pull('uid');
-        Alert::success('Logout Success', "User Logout Successful");
-        return redirect('/');
-    }
-
-    public function student_profile(){
-        $data=student::where('id',session()->get('uid'))->first();
-        return view('website.student_profile',['data'=>$data]);
-    }
-
+    
     /**
      * Display the specified resource.
      */
@@ -82,16 +110,33 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, student $student)
+    public function update(Request $request, student $student, $id)
     {
-        //
+        $data=student::find($id);
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->gen=$request->gen;
+
+        if($request->hasFile('img')) 
+        {
+            unlink('website/upload/users/'.$data->image);
+            $file=$request->file('img');		
+            $filename=time().'_img.'.$request->file('img')->getClientOriginalExtension();
+            $file->move('website/upload/users/',$filename);  // use move for move image in public/images
+            $data->image=$filename;
+        }
+        $data->update();
+        Alert::success('Update Success', "student Update Successful");
+        return redirect('/student_profile');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(student $student)
+    public function destroy(student $student,$id)
     {
-        //
+        $data=student::find($id)->delete();
+        Alert::success('Delete Success', "student Delete Successful");
+        return redirect('/manage_student');
     }
 }

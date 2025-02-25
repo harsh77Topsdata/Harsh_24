@@ -45,8 +45,8 @@
                         <td>{{$d->c_head}}</td>
                         
                         <td>
-                            <a href="edit_user" class="btn btn-primary">Edit</a>
-                            <a href="delete_user" class="btn btn-primary">Delete</a>
+                            <a href="edit_club" class="btn btn-primary">Edit</a>
+                            <a href="{{url('manage_club/'.$d->id)}}" class="btn btn-primary">Delete</a>
                         </td>
                     </tr>
                     @endforeach

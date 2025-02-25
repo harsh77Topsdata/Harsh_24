@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\club;
 use App\Models\student;
-
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -70,8 +70,10 @@ class ClubController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(club $club)
+    public function destroy(club $club,$id)
     {
-        //
+        $data=club::find($id)->delete();
+        Alert::success('Delete Success', "Club Delete Successful");
+        return redirect('/manage_club');
     }
 }
