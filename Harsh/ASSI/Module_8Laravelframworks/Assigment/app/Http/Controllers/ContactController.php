@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactController extends Controller
 {
@@ -31,17 +30,6 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
-        $insert=new contact;
-        $insert->name=$request->name;
-        $insert->email=$request->email;
-        $insert->phone=$request->phone;
-        $insert->subject=$request->subject;
-        $insert->message=$request->message;
-
-        $insert->save();
-        Alert::success('Contact Submit','You Enquiry Submited');
-        return redirect('/Contact');
-
     }
 
     /**
@@ -50,7 +38,6 @@ class ContactController extends Controller
     public function show(contact $contact)
     {
         //
-        return view('website.contact');
     }
 
     /**
