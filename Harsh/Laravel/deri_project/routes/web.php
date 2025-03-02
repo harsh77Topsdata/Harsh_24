@@ -55,10 +55,13 @@ Route::get('*', function () {
 
 //-------------------ADMIN-----------------//
 
+Route::group(['middleware'=>['admin_before']],function{
+
 Route::get('/admin_login',[AdminLoginController::class,'admin_login']);
 Route::post('/admin_auth',[AdminLoginController::class,'admin_auth']);
-Route::get('/admin_logout',[AdminLoginController::class,'admin_logout']);
+}
 
+Route::group(['middleware'=>['admin_after']],function{
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
@@ -79,8 +82,12 @@ Route::post('/add_catgories',[CatgoryController::class,'store']);
 Route::get('/manage_catgories',[CatgoryController::class,'show']);
 Route::get('/manage_catgories/{id}',[CatgoryController::class,'destroy']);
 
+Route::get('/admin_logout',[AdminLoginController::class,'admin_logout']);
+
 Route::get('*', function () {
     return view('admin.pnf');
 });
+
+}
 
 

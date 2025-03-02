@@ -8,8 +8,8 @@ use Illuminate\Cache\LuaScripts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
-
-
+use Mail;
+use App\Mail\welcomemail;
 
 
 
@@ -92,7 +92,7 @@ class UserController extends Controller
         
         $data = new user;
         $data->name = $request->name;
-        $data->email = $request->email;
+        $email=$data->email = $request->email;
         $data->password = Hash::make($request->password);
         $data->gen = $request->gender;
         $data->lang = implode(",", $request->lag);
@@ -103,6 +103,8 @@ class UserController extends Controller
         $data->image = $filename;
 
         $data->save();
+        $mail=array('name'=>$request->name);
+        Mail::to($email)->send(new welcomemail($mail));
         Alert::success('signup sucess',"Signup sucessfull");
 
         return redirect('/');

@@ -17,12 +17,12 @@
                     <div class="row">
                         <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
                             <h5 class="font-weight-bold mb-2">Get In Touch</h5>
-                            <p class="mb-2">123 Street, New York, USA</p>
-                            <p class="mb-0">+012 345 67890</p>
+                            <p class="mb-2">123 Street, Ahmedabad , India</p>
+                            <p class="mb-0">+91 9258789452</p>
                         </div>
                         <div class="col-sm-6 text-center text-sm-left">
                             <h5 class="font-weight-bold mb-2">Opening Hours</h5>
-                            <p class="mb-2">Mon – Sat, 8AM – 5PM</p>
+                            <p class="mb-2">Mon – Sat, 8AM – 8PM</p>
                             <p class="mb-0">Sunday: Closed</p>
                         </div>
                     </div>

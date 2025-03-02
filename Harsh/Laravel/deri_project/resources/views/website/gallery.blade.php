@@ -13,12 +13,13 @@
         </div>
     </div>
     <!-- Header End -->
-	<!-- Portfolio Start -->
+	
+    <!-- Portfolio Start -->
     <div class="container-fluid py-5 px-0">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
-                    <h1 class="section-title position-relative text-center mb-5">Delicious Ice Cream Made From Our Very Own Organic Milk</h1>
+                    <h1 class="section-title position-relative text-center mb-5">Delicious Sweet Made From Our Very Own Organic Milk</h1>
                 </div>
             </div>
             <div class="row">

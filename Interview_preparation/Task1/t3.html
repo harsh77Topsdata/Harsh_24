@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: #fff706;
+            padding: 20px;
+            height: 80px;
+        }
+
+        .wide { grid-column: span 2; } 
+        .full { grid-column: span 3; }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item full"></div>
+        <div class="grid-item wide"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item wide"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item full"></div>
+    </div>
+
+</body>
+</html>

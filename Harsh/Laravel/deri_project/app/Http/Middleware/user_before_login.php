@@ -15,6 +15,10 @@ class user_before_login
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(session()->had('uid'))
+        {
+            return redirect('/');
+        }
         return $next($request);
     }
 }

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards - Bootstrap</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .card-img {
+            height: 228px;
+            background-color: #7cc6e7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .hot-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .btn-cart {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-cart:hover {
+            background-color: #218838;
+        }
+        .stars {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row g-3">
+            <!-- Product Card 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-img position-relative">
+                        <img src="https://m.media-amazon.com/images/I/61vKrFMXFjL.jpg" class="card-img" alt="productimage">
+                        <span class="hot-badge">Primary</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Whey Protin</h5>
+                        <p class="text-muted">Alpha Protin Shop</p>
+                        <h4 class="text-primary">₹5000 </h4>
+                        <p>High-Quality Whey Protein for muscle growth and recovery.</p>
+                        <button class="btn-cart">Add to cart</button>
+                        <div class="mt-2">
+                            ⭐⭐⭐⭐☆
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duplicate the product card for more products -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-img position-relative">
+                        <img src=" https://m.media-amazon.com/images/I/61X6BEoQx6L._AC_UF350,350_QL80_.jpg" class="card-img" alt="productimage">
+                        <span class="hot-badge">Primary</span>
+                    </div>
+                  
+                    <div class="card-body">
+                        <h5 class="card-title">Peanut butter</h5>
+                        <p class="text-muted">My Fitness</p>
+                        <h4 class="text-primary">₹525</h4>
+                        <p>100% Natural Peanut Butter – No added sugar or preservatives.</p>
+                        <button class="btn-cart">Add to cart</button>
+                        <div class="mt-2">
+                            ⭐⭐⭐☆☆
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-img position-relative">
+                        <img src=" https://fempowered.in/cdn/shop/products/front-64228a1866b59-White_S_Men_Round.jpg?v=1679985194" class="card-img" alt="productimage">
+                        <span class="hot-badge">Primary</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">T-shirt</h5>
+                        <p class="text-muted">Primium Time</p>
+                        <h4 class="text-primary">₹800</h4>
+                        <p>Durable & High-Quality Fabric for long-lasting use.</p>
+                        <button class="btn-cart">Add to cart</button>
+                        <div class="mt-2">
+                            ⭐⭐⭐⭐☆
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-img position-relative">
+                        <img src=" https://relaxofootwear.com/cdn/shop/files/SM-808-BKGO-1.jpg?v=1729764197&width=800" class="card-img" alt="productimage">
+                        <span class="hot-badge">Primary</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Sport Shoes</h5>
+                        <p class="text-muted">Sparks</p>
+                        <h4 class="text-primary">₹2500</h4>
+                        <p> Perfect for Casual, Sports & Workouts.</p>
+                        <button class="btn-cart">Add to cart</button>
+                        <div class="mt-2">
+                            ⭐⭐⭐☆☆
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

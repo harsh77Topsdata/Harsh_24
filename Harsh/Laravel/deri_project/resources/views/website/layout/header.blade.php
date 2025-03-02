@@ -119,8 +119,14 @@ function active($currect_page)
                         <a href="{{url('service')}}" class="nav-item nav-link <?php echo active('Service')?>">Service</a>
                         <a href="{{url('gallery')}}" class="nav-item nav-link <?php echo active('Gallery')?>">Gallery</a>
                         <a href="{{url('contact')}}" class="nav-item nav-link <?php echo active('Contact')?>">Contact</a>
-                        
                     </div>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Small button    
+                        </button>
+                    <ul class="dropdown-menu">
+                    </ul>
+</div>
                 </div>
         </div>
     </div>

@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+
 class user_after_login
 {
     /**
@@ -15,6 +16,14 @@ class user_after_login
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(session()->had('uid'))
+        {
+            
+        }
+        else
+        {
+            return redirect('/');
+        }
         return $next($request);
     }
 }
