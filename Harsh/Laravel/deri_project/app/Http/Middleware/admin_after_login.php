@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class admin_after_login
 {
@@ -15,6 +16,11 @@ class admin_after_login
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(!(Session()->has('uid')))
+        {
+            Alert::error('Login First','Please Login First');
+            return redirect('/admin_login');
+        }
         return $next($request);
     }
 }

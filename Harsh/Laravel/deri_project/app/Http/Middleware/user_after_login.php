@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use RealRashid\SweetAlert\Facades\Alert;
 
 class user_after_login
 {
@@ -16,13 +16,10 @@ class user_after_login
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(session()->had('uid'))
+        if(!(Session()->has('uid')))
         {
-            
-        }
-        else
-        {
-            return redirect('/');
+            Alert::error('Login First','Please Login First');
+           return redirect('/Login');
         }
         return $next($request);
     }

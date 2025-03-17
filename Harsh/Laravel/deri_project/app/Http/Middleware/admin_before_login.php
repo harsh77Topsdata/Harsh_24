@@ -15,6 +15,10 @@ class admin_before_login
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(Session('uid'))
+        {
+           return redirect('/dashboard');
+        }
         return $next($request);
     }
 }
